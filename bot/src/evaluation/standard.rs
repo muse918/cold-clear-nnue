@@ -678,14 +678,14 @@ fn cutout_tslot(mut board: Board, mut piece: FallingPiece) -> Cutout {
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Default, Serialize, Deserialize)]
 pub struct Reward {
-    value: i32,
-    attack: i32,
+    pub value: i32,
+    pub attack: i32,
 }
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd, Default, Serialize, Deserialize)]
 pub struct Value {
-    value: i32,
-    spike: i32,
+    pub value: i32,
+    pub spike: i32,
 }
 
 impl std::ops::Add for Value {

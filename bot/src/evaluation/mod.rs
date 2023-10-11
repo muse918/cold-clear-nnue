@@ -5,6 +5,7 @@ use crate::dag::MoveCandidate;
 mod standard;
 pub use self::standard::Standard;
 pub mod changed;
+pub mod nnue;
 
 pub trait Evaluator: Send + Sync {
     type Value: Evaluation<Self::Reward> + Send + 'static;
