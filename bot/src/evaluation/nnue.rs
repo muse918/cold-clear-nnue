@@ -2,7 +2,43 @@ use std::default;
 
 use lazy_static::lazy_static;
 use libtetris::*;
-use serde::{Deserialize, Serialize};
+use serde::{
+    de::{Error, Visitor},
+    ser::SerializeSeq,
+    Deserialize, Serialize,
+};
+
+struct LayerVisitor<const I: usize, const O: usize>;
+impl<'de, const I: usize, const O: usize> Visitor<'de> for LayerVisitor<I, O> {
+    type Value = ([[f32; O]; I], [f32; O]);
+    fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+        formatter.write_str("an valid single precision floating point number")
+    }
+    fn visit_seq<A>(self, mut seq: A) -> Result<Self::Value, A::Error>
+    where
+        A: serde::de::SeqAccess<'de>,
+    {
+        let mut weights = [[0.; O]; I];
+        let mut biases = [0.; O];
+        let mut encountered = 0;
+        for weight in weights.iter_mut().flatten() {
+            match seq.next_element()? {
+                Some(v) => *weight = v,
+                None => return Err(Error::invalid_length(encountered, &self)),
+            }
+            encountered += 1;
+        }
+        for bias in biases.iter_mut() {
+            match seq.next_element()? {
+                Some(v) => *bias = v,
+                None => return Err(Error::invalid_length(encountered, &self)),
+            }
+            encountered += 1;
+        }
+
+        Ok((weights, biases))
+    }
+}
 
 const ENCODE_LEN: usize = 45050; // TODO: change later
 type VecT = f32;
@@ -73,10 +109,74 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
     }
 }
 
+impl<const O: usize, const MIN: i32, const MAX: i32> Serialize for EncodeLayer<O, MIN, MAX> {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let mut seq = serializer.serialize_seq(Some(O * ENCODE_LEN + O))?;
+        for weight in self.weights.iter().flatten() {
+            seq.serialize_element(weight)?;
+        }
+        for bias in self.biases.iter() {
+            seq.serialize_element(bias)?;
+        }
+        seq.end()
+    }
+}
+
+impl<'de, const O: usize, const MIN: i32, const MAX: i32> Deserialize<'de>
+    for EncodeLayer<O, MIN, MAX>
+{
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let v = deserializer.deserialize_seq(LayerVisitor::<ENCODE_LEN, O>)?;
+        Ok(EncodeLayer {
+            weights: v.0,
+            biases: v.1,
+        })
+    }
+}
+
 #[derive(Clone, Debug, PartialEq)]
 struct LinearClampLayer<const I: usize, const O: usize, const MIN: i32, const MAX: i32> {
     weights: [[VecT; O]; I],
     biases: [VecT; O],
+}
+
+impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32> Serialize
+    for LinearClampLayer<I, O, MIN, MAX>
+{
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let mut map = serializer.serialize_seq(Some(I * O + O))?;
+        for weight in self.weights.iter().flatten() {
+            map.serialize_element(weight)?;
+        }
+        for bias in self.biases {
+            map.serialize_element(&bias)?;
+        }
+        map.end()
+    }
+}
+
+impl<'de, const I: usize, const O: usize, const MIN: i32, const MAX: i32> Deserialize<'de>
+    for LinearClampLayer<I, O, MIN, MAX>
+{
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let v = deserializer.deserialize_seq(LayerVisitor::<I, O>)?;
+        Ok(LinearClampLayer {
+            weights: v.0,
+            biases: v.1,
+        })
+    }
 }
 
 impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32> Default
@@ -107,7 +207,7 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
     }
 }
 
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, Debug, Default, Serialize)]
 pub struct Nnue {
     layer1: EncodeLayer<128, 0, 1>, // encode & do first matmul
     linear1: LinearClampLayer<128, 64, 0, 1>,
