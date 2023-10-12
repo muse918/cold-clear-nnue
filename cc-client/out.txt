@@ -14,3 +14,14 @@ Value { value: -94, spike: 0 }
 Value { value: -236, spike: 0 }
 Value { value: -78, spike: 4 }
 Value { value: -208, spike: 4 }
+Value { value: -298, spike: 0 }
+Value { value: -365, spike: 0 }
+Value { value: -323, spike: 0 }
+Value { value: -271, spike: 0 }
+Value { value: -361, spike: 0 }
+Value { value: -192, spike: 0 }
+Value { value: -360, spike: 0 }
+Value { value: -216, spike: 0 }
+Value { value: -355, spike: 0 }
+Value { value: -41, spike: 0 }
+Value { value: -355, spike: 0 }
