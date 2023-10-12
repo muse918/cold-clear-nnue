@@ -1,8 +1,8 @@
+use crate::evaluation::Standard;
 use enum_map::EnumMap;
 use libtetris::*;
 use opening_book::Book;
 use serde::{Deserialize, Serialize};
-use crate::evaluation::Standard;
 
 // use crate::tree::{ ChildData, TreeState, NodeId };
 use crate::dag::{ChildData, DagState, NodeId};
@@ -30,16 +30,18 @@ pub enum ThinkResult<V, R> {
     Unmark(NodeId),
 }
 
-impl <E: Evaluator> BotState<E> {
+impl<E: Evaluator> BotState<E> {
     pub fn output_data(&mut self) {
         let board = self.tree.board();
         let candidates: Vec<crate::dag::MoveCandidate<_>> = self.tree.get_next_candidates();
         let evaluation = format!("{:?}\n", candidates[0].evaluation);
 
-        let mut file = std::fs::OpenOptions::new().append(true).open("out.txt").expect(
-            "cannot open file");
-         std::io::Write::write_all(&mut file, evaluation.as_bytes()).expect("write failed");
-         println!("file append success");
+        let mut file = std::fs::OpenOptions::new()
+            .append(true)
+            .open("out.txt")
+            .expect("cannot open file");
+        std::io::Write::write_all(&mut file, evaluation.as_bytes()).expect("write failed");
+        println!("file append success");
     }
 }
 
