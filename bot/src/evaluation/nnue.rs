@@ -10,7 +10,7 @@ use serde::{
 
 struct LayerVisitor<const I: usize, const O: usize>;
 impl<'de, const I: usize, const O: usize> Visitor<'de> for LayerVisitor<I, O> {
-    type Value = ([[f32; O]; I], [f32; O]);
+    type Value = (Vec<[f32; O]>, [f32; O]);
     fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
         formatter.write_str("an valid single precision floating point number")
     }
@@ -18,7 +18,7 @@ impl<'de, const I: usize, const O: usize> Visitor<'de> for LayerVisitor<I, O> {
     where
         A: serde::de::SeqAccess<'de>,
     {
-        let mut weights = [[0.; O]; I];
+        let mut weights = vec![[0.; O]; I];
         let mut biases = [0.; O];
         let mut encountered = 0;
         for weight in weights.iter_mut().flatten() {
@@ -40,18 +40,18 @@ impl<'de, const I: usize, const O: usize> Visitor<'de> for LayerVisitor<I, O> {
     }
 }
 
-const ENCODE_LEN: usize = 45050; // TODO: change later
+const ENCODE_LEN: usize = ((8 * 37) << 12) + ((1 * 40) << 10); // TODO: change later
 type VecT = f32;
 
 #[derive(Clone, Debug)]
-struct EncodeLayer<const O: usize, const MIN: i32, const MAX: i32> {
-    weights: [[VecT; O]; ENCODE_LEN],
+pub struct EncodeLayer<const O: usize, const MIN: i32, const MAX: i32> {
+    weights: Vec<[VecT; O]>,
     biases: [VecT; O],
 }
 impl<const O: usize, const MIN: i32, const MAX: i32> Default for EncodeLayer<O, MIN, MAX> {
     fn default() -> Self {
         Self {
-            weights: [[0.; O]; ENCODE_LEN],
+            weights: vec![[0.; O]; ENCODE_LEN],
             biases: [0.; O],
         }
     }
@@ -107,6 +107,16 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
 
         ret
     }
+    fn with_random() -> Self {
+        let mut x = Self::default();
+        let mut state: i64 = 0x42;
+        for v in x.weights.iter_mut().flatten().chain(x.biases.iter_mut()) {
+            state ^= state.wrapping_shr(3);
+            state ^= state.wrapping_shl(3);
+            *v = (state as f32).abs().sqrt().sqrt().sqrt().sqrt();
+        }
+        x
+    }
 }
 
 impl<const O: usize, const MIN: i32, const MAX: i32> Serialize for EncodeLayer<O, MIN, MAX> {
@@ -142,7 +152,7 @@ impl<'de, const O: usize, const MIN: i32, const MAX: i32> Deserialize<'de>
 
 #[derive(Clone, Debug, PartialEq)]
 struct LinearClampLayer<const I: usize, const O: usize, const MIN: i32, const MAX: i32> {
-    weights: [[VecT; O]; I],
+    weights: Vec<[VecT; O]>,
     biases: [VecT; O],
 }
 
@@ -184,7 +194,7 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32> Default
 {
     fn default() -> Self {
         LinearClampLayer {
-            weights: [[0.; O]; I],
+            weights: vec![[0.; O]; I],
             biases: [0.; O],
         }
     }
@@ -205,6 +215,16 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
         }
         ret
     }
+    fn with_random() -> Self {
+        let mut x = Self::default();
+        let mut state: i64 = 0x42;
+        for v in x.weights.iter_mut().flatten().chain(x.biases.iter_mut()) {
+            state ^= state.wrapping_shr(3);
+            state ^= state.wrapping_shl(3);
+            *v = (state as f32).abs().sqrt().sqrt().sqrt().sqrt();
+        }
+        x
+    }
 }
 
 #[derive(Clone, Debug, Default, Serialize)]
@@ -212,7 +232,7 @@ pub struct Nnue {
     layer1: EncodeLayer<128, 0, 1>, // encode & do first matmul
     linear1: LinearClampLayer<128, 64, 0, 1>,
     linear2: LinearClampLayer<64, 32, 0, 1>,
-    linear3: LinearClampLayer<32, 2, 0, 1>,
+    linear3: LinearClampLayer<32, 2, -1000, 1000>,
 }
 
 impl Nnue {
@@ -223,6 +243,14 @@ impl Nnue {
         let l3 = self.linear2.forward(l2);
         let l4 = self.linear3.forward(l3);
         (l4[0], l4[1])
+    }
+    pub fn with_random() -> Self {
+        Self {
+            layer1: EncodeLayer::with_random(),
+            linear1: LinearClampLayer::with_random(),
+            linear2: LinearClampLayer::with_random(),
+            linear3: LinearClampLayer::with_random(),
+        }
     }
 }
 
