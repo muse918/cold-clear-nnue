@@ -3,6 +3,7 @@ use libtetris::*;
 use opening_book::Book;
 use serde::{Deserialize, Serialize};
 use crate::evaluation::Standard;
+use serde_json::json;
 
 // use crate::tree::{ ChildData, TreeState, NodeId };
 use crate::dag::{ChildData, DagState, NodeId};
@@ -34,7 +35,8 @@ impl <E: Evaluator> BotState<E> {
     pub fn output_data(&mut self) {
         let board = self.tree.board();
         let candidates: Vec<crate::dag::MoveCandidate<_>> = self.tree.get_next_candidates();
-        let evaluation = format!("{:?}\n", candidates[0].evaluation);
+        let evaluation = format!("{:?}\n{:?}\n\n", candidates[0].evaluation, candidates[0].board);
+        
 
         let mut file = std::fs::OpenOptions::new().append(true).open("out.txt").expect(
             "cannot open file");

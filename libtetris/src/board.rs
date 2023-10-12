@@ -8,7 +8,7 @@ use serde::{Deserialize, Serialize};
 use crate::*;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
-pub struct Board<R = u16> {
+pub struct Board<R = u16>{
     cells: ArrayVec<[R; 40]>,
     column_heights: [i32; 10],
     pub combo: u32,
