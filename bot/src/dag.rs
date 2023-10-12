@@ -95,7 +95,7 @@ use self::ouroboros_impl_generation::BorrowedMutFields;
 
 pub struct DagState<E: 'static, R: 'static> {
     board: Board,
-    generations: VecDeque<Generation<E, R>>,
+    generations: VecDeque<Generation<E, R>>,//generations[0].data.nodes[all].evaluation
     root: u32,
     gens_passed: u32,
     use_hold: bool,

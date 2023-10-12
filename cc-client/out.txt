@@ -1,0 +1,16 @@
+Value { value: -417, spike: 0 }
+Value { value: -600, spike: 0 }
+Value { value: -322, spike: 0 }
+Value { value: -577, spike: 0 }
+Value { value: -249, spike: 0 }
+Value { value: -568, spike: 0 }
+Value { value: -327, spike: 0 }
+Value { value: -200, spike: 0 }
+Value { value: -360, spike: 0 }
+Value { value: -293, spike: 0 }
+Value { value: -248, spike: 0 }
+Value { value: -260, spike: 0 }
+Value { value: -94, spike: 0 }
+Value { value: -236, spike: 0 }
+Value { value: -78, spike: 4 }
+Value { value: -208, spike: 4 }

@@ -1,14 +1,16 @@
+use std::fmt::Debug;
+
 use libtetris::{Board, LockResult, Piece};
 
 use crate::dag::MoveCandidate;
 
-mod standard;
+pub mod standard;
 pub use self::standard::Standard;
 pub mod changed;
 
-pub trait Evaluator: Send + Sync {
-    type Value: Evaluation<Self::Reward> + Send + 'static;
-    type Reward: Clone + Send + 'static;
+pub trait Evaluator: Send + Sync + Debug{
+    type Value: Evaluation<Self::Reward> + Send + 'static + Debug;
+    type Reward: Clone + Send + 'static + Debug;
 
     fn name(&self) -> String;
 

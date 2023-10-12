@@ -684,8 +684,8 @@ pub struct Reward {
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd, Default, Serialize, Deserialize)]
 pub struct Value {
-    value: i32,
-    spike: i32,
+    pub value: i32,
+    pub spike: i32,
 }
 
 impl std::ops::Add for Value {
