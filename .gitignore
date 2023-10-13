@@ -6,3 +6,5 @@ options.yaml
 replay.dat
 *.ccbook
 *.ccdb
+.out
+.vscode/*

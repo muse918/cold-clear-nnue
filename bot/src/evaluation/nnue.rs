@@ -40,7 +40,8 @@ impl<'de, const I: usize, const O: usize> Visitor<'de> for LayerVisitor<I, O> {
     }
 }
 
-const ENCODE_LEN: usize = ((8 * 37) << 12) + ((1 * 40) << 10); // TODO: change later
+// const ENCODE_LEN: usize = ((8 * 37) << 12) + ((1 * 40) << 10); // TODO: change later
+const ENCODE_LEN: usize = 0;
 type VecT = f32;
 
 #[derive(Clone, Debug)]
@@ -59,16 +60,8 @@ impl<const O: usize, const MIN: i32, const MAX: i32> Default for EncodeLayer<O, 
 
 impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
     // [0, 10 - M] x [0, 40 - N]
-    fn convolute<
-        const M: usize,
-        const N: usize,
-        const ELEVENMINUSM: usize,
-        const FOURTYONEMINUSN: usize,
-    >(
-        field: &[[bool; 10]; 40],
-    ) -> [[i32; ELEVENMINUSM]; FOURTYONEMINUSN] {
-        // let mut ret = field.map(|x| x.map(|y| y as i32));
-        let mut ret = [[0; ELEVENMINUSM]; FOURTYONEMINUSN];
+    fn convolute<const M: usize, const N: usize>(field: &[[bool; 10]; 40]) -> [[i32; 10]; 40] {
+        let mut ret = field.map(|x| x.map(|y| y as i32));
         for row in ret.iter_mut() {
             for i in 0..=10 - M {
                 for j in 1..=M {
@@ -88,13 +81,13 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
     fn forward(&self, board: &Board) -> [VecT; O] {
         let mut ret = [0.; O];
         let field = board.get_field();
-        let conv_3x4 = Self::convolute::<3, 4, 8, 37>(&field);
+        let conv_3x4 = Self::convolute::<3, 4>(&field);
         for (i, v) in conv_3x4.iter().flatten().cloned().enumerate() {
             for j in 0..O {
                 ret[j] += self.weights[(i << 12) + v as usize][j];
             }
         }
-        let conv_1x10 = Self::convolute::<1, 10, 10, 31>(&field);
+        let conv_1x10 = Self::convolute::<1, 10>(&field);
         for (i, v) in conv_1x10.iter().flatten().cloned().enumerate() {
             for j in 0..O {
                 ret[j] += self.weights[((8 * 37) << 12) + (i << 10) + v as usize][j];
@@ -215,6 +208,18 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
         }
         ret
     }
+    fn forward_non_clamp(&self, inp: [VecT; I]) -> [VecT; O] {
+        let mut ret = [0.; O];
+        for (i, x) in inp.iter().enumerate() {
+            for (j, y) in self.weights[i].iter().enumerate() {
+                ret[j] += x * y;
+            }
+        }
+        for (x, bias) in ret.iter_mut().zip(self.biases) {
+            *x += bias
+        }
+        ret
+    }
     fn with_random() -> Self {
         let mut x = Self::default();
         let mut state: i64 = 0x42;
@@ -229,24 +234,24 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
 
 #[derive(Clone, Debug, Default, Serialize)]
 pub struct Nnue {
-    layer1: EncodeLayer<128, 0, 1>, // encode & do first matmul
+    encode: EncodeLayer<128, 0, 1>, // encode & do first matmul
     linear1: LinearClampLayer<128, 64, 0, 1>,
     linear2: LinearClampLayer<64, 32, 0, 1>,
-    linear3: LinearClampLayer<32, 2, -1000, 1000>,
+    linear3: LinearClampLayer<32, 2, -1, 1>,
 }
 
 impl Nnue {
     // (board, placement) values
     fn forward(&self, board: &Board) -> (f32, f32) {
-        let l1 = self.layer1.forward(board);
+        let l1 = self.encode.forward(board);
         let l2 = self.linear1.forward(l1);
         let l3 = self.linear2.forward(l2);
-        let l4 = self.linear3.forward(l3);
+        let l4 = self.linear3.forward_non_clamp(l3);
         (l4[0], l4[1])
     }
     pub fn with_random() -> Self {
         Self {
-            layer1: EncodeLayer::with_random(),
+            encode: EncodeLayer::with_random(),
             linear1: LinearClampLayer::with_random(),
             linear2: LinearClampLayer::with_random(),
             linear3: LinearClampLayer::with_random(),
@@ -302,11 +307,11 @@ impl Evaluator for Nnue {
         let value = MODEL.forward(board);
         (
             Value {
-                value: value.0 as i32,
+                value: (value.0.min(0.) * 1000.) as i32,
                 spike: 0,
             },
             Reward {
-                value: value.1 as i32,
+                value: value.1.max(0.) as i32,
                 attack: if lock.placement_kind.is_clear() {
                     lock.garbage_sent as i32
                 } else {
