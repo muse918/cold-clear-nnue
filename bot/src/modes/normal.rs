@@ -34,14 +34,13 @@ impl<E: Evaluator> BotState<E> {
     pub fn output_data(&mut self) {
         let board = self.tree.board();
         let candidates: Vec<crate::dag::MoveCandidate<_>> = self.tree.get_next_candidates();
-        let evaluation = format!("{:?}\n{:?}\n\n", candidates[0].evaluation, candidates[0].board);
-        
+        let serialized = serde_json::to_string(&candidates).unwrap() + "\n";
 
         let mut file = std::fs::OpenOptions::new()
             .append(true)
             .open("out.txt")
             .expect("cannot open file");
-        std::io::Write::write_all(&mut file, evaluation.as_bytes()).expect("write failed");
+        std::io::Write::write_all(&mut file, serialized.as_bytes()).expect("write failed");
         println!("file append success");
     }
 }
