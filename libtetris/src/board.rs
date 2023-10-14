@@ -14,7 +14,7 @@ pub struct Board<R = u16>{
     pub combo: u32,
     pub b2b_bonus: bool,
     pub hold_piece: Option<Piece>,
-    next_pieces: VecDeque<Piece>,
+    pub next_pieces: VecDeque<Piece>,
     pub bag: EnumSet<Piece>,
 }
 

@@ -8,3 +8,7 @@ replay.dat
 *.ccdb
 .out
 .vscode/*
+cc-client/out_high.txt
+.gitignore
+cc-client/out2.txt
+cc-client/out.txt
