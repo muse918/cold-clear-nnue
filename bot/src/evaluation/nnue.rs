@@ -82,44 +82,60 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
         let mut ret = [0.; O];
         let field = board.get_field();
         let conv_3x4 = Self::convolute::<3, 4>(&field);
-        for (i, v) in conv_3x4.iter().flatten().cloned().enumerate() {
+        for (i, v) in conv_3x4
+            .iter()
+            .take(41 - 4)
+            .flat_map(|x| x.iter().take(11 - 3))
+            .cloned()
+            .enumerate()
+        {
             for j in 0..O {
                 ret[j] += self.weights[(i << 12) + v as usize][j];
             }
         }
-        let conv_1x10 = Self::convolute::<1, 10>(&field);
-        for (i, v) in conv_1x10.iter().flatten().cloned().enumerate() {
+        let conv_10x1 = Self::convolute::<10, 1>(&field);
+        for (i, v) in conv_10x1
+            .iter()
+            .take(41 - 1)
+            .flat_map(|x| x.iter().take(11 - 10))
+            .cloned()
+            .enumerate()
+        {
             for j in 0..O {
                 ret[j] += self.weights[((8 * 37) << 12) + (i << 10) + v as usize][j];
             }
         }
         //TO-DO: 큐, 기타 인코딩
-        let mut bag = [0;7];
-        board.bag.iter().for_each(|x| bag[match x {
-            Piece::I => 0,
-            Piece::O => 1,
-            Piece::T => 2,
-            Piece::L => 3,
-            Piece::J => 4,
-            Piece::S => 5,
-            Piece::Z => 6,
-        }] = 1);
-        let btb = [if board.b2b_bonus {1} else {0}];
-        let mut combo = [0i32;20];
+        let mut bag = [0; 7];
+        board.bag.iter().for_each(|x| {
+            bag[match x {
+                Piece::I => 0,
+                Piece::O => 1,
+                Piece::T => 2,
+                Piece::L => 3,
+                Piece::J => 4,
+                Piece::S => 5,
+                Piece::Z => 6,
+            }] = 1
+        });
+        let btb = [if board.b2b_bonus { 1 } else { 0 }];
+        let mut combo = [0i32; 20];
         const NEXT_QUEUE_SIZE: usize = 5;
         combo[(board.combo).min(19) as usize] = 1;
-        let mut next_queue = [0;NEXT_QUEUE_SIZE*7];
-        board.next_pieces.iter().enumerate().for_each(|x| next_queue[match x.1 {
-            Piece::I => 0,
-            Piece::O => 1,
-            Piece::T => 2,
-            Piece::L => 3,
-            Piece::J => 4,
-            Piece::S => 5,
-            Piece::Z => 6,
-        } + 7 * x.0] = 1);
-        let mut hold_piece = [0;7];
-        if let Some (hold) = board.hold_piece {
+        let mut next_queue = [0; NEXT_QUEUE_SIZE * 7];
+        board.next_pieces.iter().enumerate().for_each(|x| {
+            next_queue[match x.1 {
+                Piece::I => 0,
+                Piece::O => 1,
+                Piece::T => 2,
+                Piece::L => 3,
+                Piece::J => 4,
+                Piece::S => 5,
+                Piece::Z => 6,
+            } + 7 * x.0] = 1
+        });
+        let mut hold_piece = [0; 7];
+        if let Some(hold) = board.hold_piece {
             next_queue[match hold {
                 Piece::I => 0,
                 Piece::O => 1,
@@ -130,7 +146,6 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
                 Piece::Z => 6,
             }] = 1
         }
-
 
         for (v, bias) in ret.iter_mut().zip(self.biases) {
             *v = (*v + bias).clamp(MIN as VecT, MAX as VecT);
