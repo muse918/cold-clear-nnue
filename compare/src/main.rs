@@ -11,9 +11,9 @@ mod input;
 use input::BotInput;
 
 fn main() {
-    use cold_clear::evaluation::{changed, Standard};
+    use cold_clear::evaluation::{changed, nnue::NnueEvaluator};
 
-    let p1_eval = Standard::default();
+    let p1_eval = NnueEvaluator::default();
 
     let p2_eval = changed::Standard::default();
 

@@ -227,7 +227,7 @@ trait State {
 #[derive(Serialize, Deserialize, Clone)]
 struct Options {
     p1: PlayerConfig<cold_clear::evaluation::Standard>,
-    p2: PlayerConfig<cold_clear::evaluation::Standard>,
+    p2: PlayerConfig<cold_clear::evaluation::nnue::NnueEvaluator>,
 }
 
 impl Default for Options {
