@@ -37,7 +37,7 @@ impl<E: Evaluator> BotState<E> {
 
         let mut file = std::fs::OpenOptions::new()
             .append(true)
-            .open("out.txt")
+            .open("out_height.txt")
             .expect("cannot open file");
         std::io::Write::write_all(&mut file, serialized.as_bytes()).expect("write failed");
         println!("file append success");
@@ -199,7 +199,7 @@ impl<E: Evaluator> BotState<E> {
             inputs: inputs.movements,
             expected_location: child.mv,
         };
-        self.output_data();
+        // self.output_data();
         return Some((mv, info));
     }
 

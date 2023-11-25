@@ -13,3 +13,11 @@ cc-client/out_high.txt
 cc-client/out2.txt
 cc-client/out.txt
 cc-client/out_1015.txt
+cc-client/out_weight_2.txt
+cc-client/out_def.txt
+.gitignore
+<<<<<<< HEAD
+cc-client/out_height.txt
+=======
+>>>>>>> parent of 27b7a56 (normalize)
+cc-client/eval.txt

@@ -41,7 +41,7 @@ const STANDARD: Standard = Standard {
     mini_tspin1: -158,
     mini_tspin2: -93,
     perfect_clear: 999,
-    combo_garbage: 150,
+    combo_garbage: 250,
 
     use_bag: true,
     timed_jeopardy: true,
@@ -369,7 +369,7 @@ impl Nnue {
         let l2 = self.linear1.forward(l1);
         let l3 = self.linear2.forward(l2);
         let l4 = self.linear3.forward_non_clamp(l3);
-        l4[0]
+        l4[0].max(0.).min(1.) * 20000. - 17500.
     }
     pub fn with_random() -> Self {
         Self {
@@ -387,13 +387,13 @@ fn read_nnue(dir: String) -> Nnue {
 }
 
 lazy_static! {
-    static ref MODEL: Nnue = read_nnue("D:\\muse918\\cold-clear-nnue-train\\src\\net\\net_new_encode (3).json".to_string());
+    static ref MODEL: Nnue = read_nnue("D:\\muse918\\cold-clear-nnue-train\\src\\net\\net_height5.json".to_string());
 }
 
 use crate::evaluation::Evaluator;
 
 use super::{standard::{Reward, Value}, Standard};
-
+    
 #[derive(Debug,Default,Serialize,Deserialize,Copy,Clone)]
 pub struct NnueEvaluator;
 
@@ -401,7 +401,7 @@ impl Evaluator for NnueEvaluator {
     type Value = Value;
     type Reward = Reward;
     fn name(&self) -> String {
-        "NNUE".to_string()
+        "NNUE\nNormalized".to_string()
     }
 
     fn pick_move(

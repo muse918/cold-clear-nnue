@@ -9,6 +9,8 @@ pub mod standard;
 pub use self::standard::Standard;
 pub mod changed;
 pub mod nnue;
+pub mod nnue_new;
+pub mod nnue_normalized;
 
 pub trait Evaluator: Send + Sync + Debug{
     type Value: Evaluation<Self::Reward> + Send + 'static + Debug + Serialize;

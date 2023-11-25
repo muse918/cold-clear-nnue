@@ -1,0 +1,207 @@
+---
+p1:
+  controls:
+    keyboard:
+      left: Left
+      right: Right
+      rotate_left: Z
+      rotate_right: X
+      hard_drop: Space
+      soft_drop: Down
+      hold: C
+    gamepad:
+      left:
+        Button: DPadLeft
+      right:
+        Button: DPadRight
+      rotate_left:
+        Button: South
+      rotate_right:
+        Button: East
+      hard_drop:
+        Button: DPadUp
+      soft_drop:
+        Button: DPadDown
+      hold:
+        Button: LeftTrigger
+  game:
+    spawn_delay: 60
+    line_clear_delay: 0
+    delayed_auto_shift: 2
+    auto_repeat_rate: 0
+    soft_drop_speed: 0
+    lock_delay: 30
+    gravity: 4500
+    next_queue_size: 5
+    max_garbage_add: 10
+    move_lock_rule: 15
+    garbage_blocking: false
+    garbage_messiness: 0.3
+  bot_config:
+    weights:
+      back_to_back: 52
+      bumpiness: -24
+      bumpiness_sq: -7
+      row_transitions: -5
+      height: -78
+      top_half: -150
+      top_quarter: -511
+      jeopardy: -11
+      cavity_cells: -173
+      cavity_cells_sq: -3
+      overhang_cells: -34
+      overhang_cells_sq: -1
+      covered_cells: -17
+      covered_cells_sq: -1
+      tslot:
+        - 8
+        - 148
+        - 192
+        - 407
+      well_depth: 57
+      max_well_depth: 17
+      well_column:
+        - 20
+        - 23
+        - 20
+        - 50
+        - 59
+        - 21
+        - 59
+        - 10
+        - -10
+        - 24
+      b2b_clear: 104
+      clear1: -143
+      clear2: -100
+      clear3: -58
+      clear4: 390
+      tspin1: 121
+      tspin2: 410
+      tspin3: 602
+      mini_tspin1: -158
+      mini_tspin2: -93
+      perfect_clear: 999
+      combo_garbage: 150
+      move_time: -3
+      wasted_t: -152
+      use_bag: true
+      timed_jeopardy: true
+      stack_pc_damage: false
+      sub_name: ~
+    options:
+      mode: ZeroG
+      spawn_rule: Row19Or20
+      use_hold: true
+      speculate: true
+      pcloop: ~
+      min_nodes: 0
+      max_nodes: 4000000000
+      threads: 10
+    speed_limit: 0
+    book_path: ~
+  is_bot: true
+  show_plan: true
+p2:
+  controls:
+    keyboard:
+      left: Left
+      right: Right
+      rotate_left: Z
+      rotate_right: X
+      hard_drop: Space
+      soft_drop: Down
+      hold: C
+    gamepad:
+      left:
+        Button: DPadLeft
+      right:
+        Button: DPadRight
+      rotate_left:
+        Button: South
+      rotate_right:
+        Button: East
+      hard_drop:
+        Button: DPadUp
+      soft_drop:
+        Button: DPadDown
+      hold:
+        Button: LeftTrigger
+  game:
+    spawn_delay: 70
+    line_clear_delay: 0
+    delayed_auto_shift: 2
+    auto_repeat_rate: 0
+    soft_drop_speed: 0
+    lock_delay: 30
+    gravity: 4500
+    next_queue_size: 5
+    max_garbage_add: 10
+    move_lock_rule: 15
+    garbage_blocking: false
+    garbage_messiness: 0.3
+  bot_config:
+    weights:
+      back_to_back: 52
+      bumpiness: -24
+      bumpiness_sq: -7
+      row_transitions: -5
+      height: -78
+      top_half: -150
+      top_quarter: -511
+      jeopardy: -11
+      cavity_cells: -173
+      cavity_cells_sq: -3
+      overhang_cells: -34
+      overhang_cells_sq: -1
+      covered_cells: -17
+      covered_cells_sq: -1
+      tslot:
+        - 8
+        - 148
+        - 192
+        - 407
+      well_depth: 57
+      max_well_depth: 17
+      well_column:
+        - 20
+        - 23
+        - 20
+        - 50
+        - 59
+        - 21
+        - 59
+        - 10
+        - -10
+        - 24
+      b2b_clear: 104
+      clear1: -143
+      clear2: -100
+      clear3: -58
+      clear4: 390
+      tspin1: 121
+      tspin2: 410
+      tspin3: 602
+      mini_tspin1: -158
+      mini_tspin2: -93
+      perfect_clear: 999
+      combo_garbage: 150
+      move_time: -3
+      wasted_t: -152
+      use_bag: true
+      timed_jeopardy: true
+      stack_pc_damage: false
+      sub_name: ~
+    options:
+      mode: ZeroG
+      spawn_rule: Row19Or20
+      use_hold: true
+      speculate: true
+      pcloop: ~
+      min_nodes: 0
+      max_nodes: 4000000000
+      threads: 10
+    speed_limit: 0
+    book_path: ~
+  is_bot: true
+  show_plan: true
