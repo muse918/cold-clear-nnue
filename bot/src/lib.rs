@@ -1,3 +1,5 @@
+#![feature(generic_const_exprs)]
+
 pub use opening_book::{Book, MemoryBook};
 use serde::{Deserialize, Serialize};
 

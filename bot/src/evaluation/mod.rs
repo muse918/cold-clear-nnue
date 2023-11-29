@@ -12,7 +12,7 @@ pub mod nnue;
 pub mod nnue_new;
 pub mod nnue_normalized;
 
-pub trait Evaluator: Send + Sync + Debug{
+pub trait Evaluator: Send + Sync + Debug {
     type Value: Evaluation<Self::Reward> + Send + 'static + Debug + Serialize;
     type Reward: Clone + Send + 'static + Debug;
 

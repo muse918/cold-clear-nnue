@@ -1,12 +1,11 @@
-use std::{default, os, fs};
+use std::arch::x86_64::*;
+use std::{default, fs, os};
 
 use lazy_static::lazy_static;
 use libtetris::*;
-use serde::{
-    de::{Error, Visitor},
-    ser::SerializeSeq,
-    Deserialize, Serialize,
-};
+use serde::de::{Error, Visitor};
+use serde::ser::SerializeSeq;
+use serde::{Deserialize, Serialize};
 
 const STANDARD: Standard = Standard {
     back_to_back: 52,
@@ -82,7 +81,7 @@ impl<'de, const I: usize, const O: usize> Visitor<'de> for LayerVisitor<I, O> {
 }
 
 const ENCODE_LEN: usize = ((8 * 37) << 12) + ((1 * 40) << 10) + 7 + 1 + 20 + 7 * 5 + 7; // TODO: change later
-// const ENCODE_LEN: usize = 0;
+                                                                                        // const ENCODE_LEN: usize = 0;
 type VecT = f32;
 
 #[derive(Clone, Debug)]
@@ -155,8 +154,7 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
             Piece::J => 4,
             Piece::S => 5,
             Piece::Z => 6,
-        })
-        {
+        }) {
             for j in 0..O {
                 ret[j] += self.weights[((8 * 37) << 12) + (1 * 40 << 10) + v as usize][j];
             }
@@ -167,7 +165,8 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
             }
         }
         for j in 0..O {
-            ret[j] += self.weights[((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + (board.combo).min(19) as usize][j]; 
+            ret[j] += self.weights
+                [((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + (board.combo).min(19) as usize][j];
         }
         for x in board.next_pieces.iter().take(5).enumerate() {
             let idx = match x.1 {
@@ -180,7 +179,7 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
                 Piece::Z => 6,
             } + 7 * x.0;
             for j in 0..O {
-                ret[j] += self.weights[((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + idx][j]; 
+                ret[j] += self.weights[((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + idx][j];
             }
         }
         if let Some(hold) = board.hold_piece {
@@ -194,7 +193,8 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
                 Piece::Z => 6,
             };
             for j in 0..O {
-                ret[j] += self.weights[((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + 7 * 5 + idx][j]; 
+                ret[j] +=
+                    self.weights[((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + 7 * 5 + idx][j];
             }
         }
 
@@ -213,6 +213,93 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
             *v = (state as f32).abs().sqrt().sqrt().sqrt().sqrt();
         }
         x
+    }
+    #[target_feature(enable = "avx2")]
+    unsafe fn forward_simd(&self, board: &Board) -> [__m256; O / 8] {
+        let mut ret = [_mm256_setzero_ps(); O / 8];
+        macro_rules! add_ret {
+            ($(($source:expr, $index:expr)),*) => {
+                $(
+                for j in 0..O / 8 {
+                    ret[j] = _mm256_add_ps(ret[j], _mm256_loadu_ps(&$source[$index][8 * j]))
+                }
+                )*
+            };
+            ($($index:expr),*) => {
+                add_ret!($((&self.weights, $index)),*)
+            };
+            ($source:expr; clamp) => {
+                for j in 0..O / 8 {
+                    ret[j] = _mm256_max_ps(_mm256_add_ps(
+                        ret[j],
+                        _mm256_loadu_ps(&$source[8 * j]),
+                    ), _mm256_setzero_ps())
+                }
+            };
+        }
+        let field = board.get_field();
+        let conv_3x4 = Self::convolute::<3, 4>(&field);
+        for (i, v) in conv_3x4
+            .iter()
+            .take(41 - 4)
+            .flat_map(|x| x.iter().take(11 - 3))
+            .cloned()
+            .enumerate()
+        {
+            add_ret!((i << 12) + v as usize);
+        }
+        let conv_10x1 = Self::convolute::<10, 1>(&field);
+        for (i, v) in conv_10x1
+            .iter()
+            .take(41 - 1)
+            .flat_map(|x| x.iter().take(11 - 10))
+            .cloned()
+            .enumerate()
+        {
+            add_ret!(((8 * 37) << 12) + (i << 10) + v as usize);
+        }
+        for v in board.bag.iter().map(|x| match x {
+            Piece::I => 0,
+            Piece::O => 1,
+            Piece::T => 2,
+            Piece::L => 3,
+            Piece::J => 4,
+            Piece::S => 5,
+            Piece::Z => 6,
+        }) {
+            add_ret!(((8 * 37) << 12) + (1 * 40 << 10) + v as usize);
+        }
+        if board.b2b_bonus {
+            add_ret!(((8 * 37) << 12) + (1 * 40 << 10) + 7);
+        }
+        add_ret!(((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + (board.combo).min(19) as usize);
+        for x in board.next_pieces.iter().take(5).enumerate() {
+            let idx = match x.1 {
+                Piece::I => 0,
+                Piece::O => 1,
+                Piece::T => 2,
+                Piece::L => 3,
+                Piece::J => 4,
+                Piece::S => 5,
+                Piece::Z => 6,
+            } + 7 * x.0;
+            add_ret!(((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + idx);
+        }
+        if let Some(hold) = board.hold_piece {
+            let idx = match hold {
+                Piece::I => 0,
+                Piece::O => 1,
+                Piece::T => 2,
+                Piece::L => 3,
+                Piece::J => 4,
+                Piece::S => 5,
+                Piece::Z => 6,
+            };
+            add_ret!(((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + 7 * 5 + idx);
+        }
+        // add bias
+        add_ret!(self.biases; clamp);
+        ret
     }
 }
 
@@ -311,6 +398,27 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
             // *x = (*x + bias).clamp(MIN as VecT, MAX as VecT);
             *x = (*x + bias).max(0.);
         }
+        return ret;
+    }
+    #[target_feature(enable = "avx2")]
+    unsafe fn forward_simd(&self, inp: [__m256; I / 8]) -> [__m256; O / 8] {
+        let mut ret = [_mm256_setzero_ps(); O / 8];
+        for i in 0..O / 8 {
+            ret[i] = _mm256_loadu_ps(&self.biases[8 * i]);
+        }
+        for i in 0..I / 8 {
+            let mut tmp = [0_f32; 8];
+            _mm256_storeu_ps(&mut tmp as *mut f32, inp[i]);
+            for (j, &x) in tmp.iter().enumerate() {
+                for k in 0..O / 8 {
+                    ret[k] = _mm256_fmadd_ps(
+                        _mm256_loadu_ps(&self.weights[8 * i + j][8 * k]),
+                        _mm256_set1_ps(x),
+                        ret[k],
+                    );
+                }
+            }
+        }
         ret
     }
     fn forward_non_clamp(&self, inp: [VecT; I]) -> [VecT; O] {
@@ -324,6 +432,28 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
             *x += bias
         }
         ret
+    }
+    #[target_feature(enable = "avx2")]
+    unsafe fn forward_reduce(&self, inp: [__m256; I / 8]) -> f32 {
+        macro_rules! load {
+            ($source:expr, $base:expr, $($off:tt),*) => {
+                _mm256_set_ps($($source[$base + $off][0]),*)
+            };
+        }
+        let mut ret_m256i = _mm256_setzero_ps();
+        for i in 0..I / 8 {
+            let weight = load!(self.weights, 8 * i, 0, 1, 2, 3, 4, 5, 6, 7);
+            ret_m256i = _mm256_fmadd_ps(weight, inp[i], ret_m256i);
+        }
+        let hi = _mm256_extractf128_ps::<1>(ret_m256i);
+        let lo = _mm256_castps256_ps128(ret_m256i);
+        let s1 = _mm_add_ps(hi, lo);
+        let s2 = _mm_movehl_ps(s1, s1);
+        let s3 = _mm_add_ps(s1, s2);
+        let hi = _mm_shuffle_ps::<1>(s3, s3);
+        let lo = s3;
+        let sum = _mm_add_ss(lo, hi);
+        _mm_cvtss_f32(sum) + self.biases[0]
     }
     fn with_random() -> Self {
         let mut x = Self::default();
@@ -347,12 +477,20 @@ pub struct Nnue {
 
 impl Nnue {
     // (board, placement) values
-    fn forward(&self, board: &Board) -> f32 {
+    pub fn forward(&self, board: &Board) -> f32 {
         let l1 = self.encode.forward(board);
         let l2 = self.linear1.forward(l1);
         let l3 = self.linear2.forward(l2);
         let l4 = self.linear3.forward_non_clamp(l3);
         l4[0]
+    }
+    pub fn forward_simd(&self, board: &Board) -> f32 {
+        unsafe {
+            let l1 = self.encode.forward_simd(board);
+            let l2 = self.linear1.forward_simd(l1);
+            let l3 = self.linear2.forward_simd(l2);
+            self.linear3.forward_reduce(l3)
+        }
     }
     pub fn with_random() -> Self {
         Self {
@@ -370,14 +508,16 @@ fn read_nnue(dir: String) -> Nnue {
 }
 
 lazy_static! {
-    static ref MODEL: Nnue = read_nnue("D:\\muse918\\cold-clear-nnue-train\\src\\net\\net_20231102_trained.json".to_string());
+    static ref MODEL: Nnue = read_nnue(
+        "D:\\muse918\\cold-clear-nnue-train\\src\\net\\net_20231102_trained.json".to_string()
+    );
 }
 
+use super::standard::{Reward, Value};
+use super::Standard;
 use crate::evaluation::Evaluator;
 
-use super::{standard::{Reward, Value}, Standard};
-
-#[derive(Debug,Default,Serialize,Deserialize,Copy,Clone)]
+#[derive(Debug, Default, Serialize, Deserialize, Copy, Clone)]
 pub struct NnueEvaluator;
 
 impl Evaluator for NnueEvaluator {
@@ -385,7 +525,7 @@ impl Evaluator for NnueEvaluator {
     type Reward = Reward;
     fn name(&self) -> String {
         "NNUE".to_string()
-    } 
+    }
 
     fn pick_move(
         &self,
@@ -418,7 +558,6 @@ impl Evaluator for NnueEvaluator {
         move_time: u32,
         placed: Piece,
     ) -> (Self::Value, Self::Reward) {
-        
         let mut acc_eval = 0;
 
         if lock.perfect_clear {
@@ -479,16 +618,18 @@ impl Evaluator for NnueEvaluator {
         };
         acc_eval += STANDARD.move_time * move_time;
 
-
         let highest_point = *board.column_heights().iter().max().unwrap() as i32;
 
         acc_eval += STANDARD.jeopardy
             * (highest_point - 10).max(0)
-            * if STANDARD.timed_jeopardy { move_time } else { 10 }
+            * if STANDARD.timed_jeopardy {
+                move_time
+            } else {
+                10
+            }
             / 10;
 
-
-        let value = MODEL.forward(board);
+        let value = MODEL.forward_simd(board);
         (
             Value {
                 value: (value) as i32,
@@ -505,4 +646,3 @@ impl Evaluator for NnueEvaluator {
         )
     }
 }
-
