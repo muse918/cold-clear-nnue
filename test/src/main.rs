@@ -1,4 +1,5 @@
 #![feature(test)]
+use core::arch::x86_64::{_MM_HINT_T0, _MM_HINT_T1, _MM_HINT_T2};
 use core::time;
 use std::{fs, thread};
 
@@ -26,6 +27,13 @@ mod tests {
         let net = test::black_box(Nnue::with_random());
         let board = test::black_box(Board::new());
         b.iter(|| net.forward_simd(&board));
+    }
+
+    #[bench]
+    fn bench_eval_simd_2(b: &mut Bencher) {
+        let net = test::black_box(Nnue::with_random());
+        let board = test::black_box(Board::new());
+        b.iter(|| net.forward_simd_2(&board));
     }
 }
 

@@ -210,11 +210,11 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
         for v in x.weights.iter_mut().flatten().chain(x.biases.iter_mut()) {
             state ^= state.wrapping_shr(3);
             state ^= state.wrapping_shl(3);
-            *v = (state as f32).abs().sqrt().sqrt().sqrt().sqrt();
+            *v = 1e15 / (state as f32);
         }
         x
     }
-    #[target_feature(enable = "avx2")]
+    #[target_feature(enable = "avx2,fma")]
     unsafe fn forward_simd(&self, board: &Board) -> [__m256; O / 8] {
         let mut ret = [_mm256_setzero_ps(); O / 8];
         macro_rules! add_ret {
@@ -299,6 +299,114 @@ impl<const O: usize, const MIN: i32, const MAX: i32> EncodeLayer<O, MIN, MAX> {
         }
         // add bias
         add_ret!(self.biases; clamp);
+        ret
+    }
+    #[target_feature(enable = "avx2,fma")]
+    unsafe fn forward_simd_2<const STRATEGY: i32>(&self, board: &Board) -> [__m256; O / 8] {
+        let mut ret = [_mm256_setzero_ps(); O / 8];
+        macro_rules! simd_helper {
+            ($(($source:expr, $index:expr)),*) => {
+                $(
+                for j in 0..O / 8 {
+                    ret[j] = _mm256_add_ps(ret[j], _mm256_loadu_ps(&$source[$index][8 * j]))
+                }
+                )*
+            };
+            ($($index:expr),*) => {
+                simd_helper!($((&self.weights, $index)),*)
+            };
+            ($source:expr; clamp) => {
+                for j in 0..O / 8 {
+                    ret[j] = _mm256_max_ps(_mm256_add_ps(
+                        ret[j],
+                        _mm256_loadu_ps(&$source[8 * j]),
+                    ), _mm256_setzero_ps())
+                }
+            };
+            ($source:expr; prefetch) => {
+                for j in 0..O / 16 {
+                    _mm_prefetch::<STRATEGY>(
+                        &$source[16 * j] as *const f32 as *const i8,
+                    );
+                }
+            }
+        }
+        let field = board.get_field();
+        let conv_3x4 = Self::convolute::<3, 4>(&field);
+        let mut it = conv_3x4
+            .iter()
+            .take(41 - 4)
+            .flat_map(|x| x.iter().take(11 - 3))
+            .cloned();
+        let mut i = 0;
+        let mut cur = it.next().unwrap();
+        for _ in 0..(41 - 4) * (11 - 3) - 1 {
+            let next = it.next().unwrap();
+            simd_helper!(self.weights[4096 + (i << 12) + next as usize]; prefetch);
+            simd_helper!((i << 12) + cur as usize);
+            cur = next;
+            i += 1;
+        }
+        simd_helper!((i << 12) + cur as usize);
+
+        let conv_10x1 = Self::convolute::<10, 1>(&field);
+        let mut it = conv_10x1
+            .iter()
+            .take(41 - 1)
+            .flat_map(|x| x.iter().take(11 - 10))
+            .cloned();
+        let mut i = 0;
+        let mut cur = it.next().unwrap();
+        for _ in 0..(41 - 1) * (11 - 10) - 2 {
+            let next = it.next().unwrap();
+            simd_helper!(self.weights[((8 * 37) << 12) + 1024 + (i << 10) + next as usize]; prefetch);
+            simd_helper!(((8 * 37) << 12) + (i << 10) + cur as usize);
+            cur = next;
+            i += 1;
+        }
+        simd_helper!(((8 * 37) << 12) + (i << 10) + cur as usize);
+
+        for v in board.bag.iter().map(|x| match x {
+            Piece::I => 0,
+            Piece::O => 1,
+            Piece::T => 2,
+            Piece::L => 3,
+            Piece::J => 4,
+            Piece::S => 5,
+            Piece::Z => 6,
+        }) {
+            simd_helper!(((8 * 37) << 12) + (1 * 40 << 10) + v as usize);
+        }
+        if board.b2b_bonus {
+            simd_helper!(((8 * 37) << 12) + (1 * 40 << 10) + 7);
+        }
+        simd_helper!(((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + (board.combo).min(19) as usize);
+        for x in board.next_pieces.iter().take(5).enumerate() {
+            let idx = match x.1 {
+                Piece::I => 0,
+                Piece::O => 1,
+                Piece::T => 2,
+                Piece::L => 3,
+                Piece::J => 4,
+                Piece::S => 5,
+                Piece::Z => 6,
+            } + 7 * x.0;
+            simd_helper!(((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + idx);
+        }
+        if let Some(hold) = board.hold_piece {
+            let idx = match hold {
+                Piece::I => 0,
+                Piece::O => 1,
+                Piece::T => 2,
+                Piece::L => 3,
+                Piece::J => 4,
+                Piece::S => 5,
+                Piece::Z => 6,
+            };
+            simd_helper!(((8 * 37) << 12) + (1 * 40 << 10) + 7 + 1 + 20 + 7 * 5 + idx);
+        }
+        // add bias
+        simd_helper!(self.biases; clamp);
         ret
     }
 }
@@ -400,7 +508,7 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
         }
         return ret;
     }
-    #[target_feature(enable = "avx2")]
+    #[target_feature(enable = "avx2,fma")]
     unsafe fn forward_simd(&self, inp: [__m256; I / 8]) -> [__m256; O / 8] {
         let mut ret = [_mm256_setzero_ps(); O / 8];
         for i in 0..O / 8 {
@@ -433,7 +541,7 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
         }
         ret
     }
-    #[target_feature(enable = "avx2")]
+    #[target_feature(enable = "avx2,fma")]
     unsafe fn forward_reduce(&self, inp: [__m256; I / 8]) -> f32 {
         macro_rules! load {
             ($source:expr, $base:expr, $($off:tt),*) => {
@@ -461,7 +569,7 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
         for v in x.weights.iter_mut().flatten().chain(x.biases.iter_mut()) {
             state ^= state.wrapping_shr(3);
             state ^= state.wrapping_shl(3);
-            *v = (state as f32).abs().sqrt().sqrt().sqrt().sqrt();
+            *v = 1e15 / state as f32;
         }
         x
     }
@@ -487,6 +595,14 @@ impl Nnue {
     pub fn forward_simd(&self, board: &Board) -> f32 {
         unsafe {
             let l1 = self.encode.forward_simd(board);
+            let l2 = self.linear1.forward_simd(l1);
+            let l3 = self.linear2.forward_simd(l2);
+            self.linear3.forward_reduce(l3)
+        }
+    }
+    pub fn forward_simd_2(&self, board: &Board) -> f32 {
+        unsafe {
+            let l1 = self.encode.forward_simd_2::<_MM_HINT_T0>(board);
             let l2 = self.linear1.forward_simd(l1);
             let l3 = self.linear2.forward_simd(l2);
             self.linear3.forward_reduce(l3)
