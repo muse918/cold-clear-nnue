@@ -1,5 +1,5 @@
 use std::arch::x86_64::*;
-use std::{default, fs, os};
+use std::fs;
 
 use lazy_static::lazy_static;
 use libtetris::*;
@@ -508,6 +508,18 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
         }
         return ret;
     }
+    fn forward_non_clamp(&self, inp: [VecT; I]) -> [VecT; O] {
+        let mut ret = [0.; O];
+        for (i, x) in inp.iter().enumerate() {
+            for (j, y) in self.weights[i].iter().enumerate() {
+                ret[j] += x * y;
+            }
+        }
+        for (x, bias) in ret.iter_mut().zip(self.biases) {
+            *x += bias
+        }
+        ret
+    }
     #[target_feature(enable = "avx2,fma")]
     unsafe fn forward_simd(&self, inp: [__m256; I / 8]) -> [__m256; O / 8] {
         let mut ret = [_mm256_setzero_ps(); O / 8];
@@ -526,18 +538,6 @@ impl<const I: usize, const O: usize, const MIN: i32, const MAX: i32>
                     );
                 }
             }
-        }
-        ret
-    }
-    fn forward_non_clamp(&self, inp: [VecT; I]) -> [VecT; O] {
-        let mut ret = [0.; O];
-        for (i, x) in inp.iter().enumerate() {
-            for (j, y) in self.weights[i].iter().enumerate() {
-                ret[j] += x * y;
-            }
-        }
-        for (x, bias) in ret.iter_mut().zip(self.biases) {
-            *x += bias
         }
         ret
     }
@@ -745,7 +745,7 @@ impl Evaluator for NnueEvaluator {
             }
             / 10;
 
-        let value = MODEL.forward_simd(board);
+        let value = MODEL.forward_simd_2(board);
         (
             Value {
                 value: (value) as i32,

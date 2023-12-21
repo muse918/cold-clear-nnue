@@ -37,4 +37,11 @@ mod tests {
     }
 }
 
-fn main() {}
+fn read_nnue(dir: String) -> Nnue {
+    let nnue_str = fs::read_to_string(dir).expect("failed to read nnue");
+    serde_json::from_str(&nnue_str).unwrap()
+}
+
+fn main() {
+    read_nnue("/mnt/c/Users/Mingyu/Downloads/net_height_2x_2.net".to_string());
+}
