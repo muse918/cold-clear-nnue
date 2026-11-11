@@ -1,0 +1,4 @@
+{"cmd":"info"}
+{"cmd":"configure","rules":{"preset":"tetra_league"},"search":{"max_depth":4,"beam_width":64,"max_nodes":12000,"time_budget_ms":50},"evaluation":{"mode":"heuristic"}}
+{"cmd":"state","state":{"current":"T","hold":null,"queue":["I","O","S","Z","L"],"board":{"rows":[]},"combo":0,"b2b":0,"frame":0,"current_multiplier":1,"current_garbage_cap":8,"incoming":[]}}
+{"cmd":"search","id":"move-1"}

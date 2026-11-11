@@ -1,0 +1,60 @@
+{
+  "result": "passed",
+  "scope": "native placement environment/search; no online match or frame-input execution",
+  "source_authority": {
+    "client": "TETR.IO Beta 1.7.8 / engine 19",
+    "sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+    "cold_clear_commit": "279edd7c3177ff8077f6a930193397814b281f27",
+    "triangle_commit": "aa0698ab8b4299b85c5f87e9b54793e1b7d9d380"
+  },
+  "build": {
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+    "architecture": "x86_64",
+    "flags": "-O3 -std=c++17 -march=native -Wall -Wextra -Wpedantic",
+    "commands": [
+      "make -C tetrio-bot test",
+      "make -C tetrio-bot verify-official TETRIO_JS=/path/to/tetrio.js"
+    ]
+  },
+  "checks": {
+    "battle_regressions": 80,
+    "battle_undefined_and_float_cast_sanitizer": "80 checks passed",
+    "official_battle_cases": 16592,
+    "official_battle_mismatches": 0,
+    "official_geometry_cases": 28286,
+    "official_geometry_mismatches": 0,
+    "official_paths_replayed": 2245,
+    "native_paths_replayed": 4864,
+    "search_groups": 13,
+    "protocol_checks": 35,
+    "jsonl_requests": 105,
+    "jsonl_locks": 24,
+    "jsonl_lines": 10,
+    "evaluator_transition_edges": 11469,
+    "evaluator_accumulator_components": 6239136,
+    "offline_game_runs": 24,
+    "offline_legal_locks": 2880,
+    "offline_runs_reached_120_cap_alive": 24
+  },
+  "source_sha256": {
+    "engine.hpp": "4da5ae677a2ce3ceb00188c87e1615c6c58cec312c525e5d3ef06e53dbd28d7d",
+    "engine.cpp": "88d1c6c5151998d27878ab57e96306f99cac60e68d448c8fdcd97e7510257dc8",
+    "geometry.cpp": "815e2a365f1928ecdafded1f1500e280fe22dad2b4af8b42119efe67c07035e8",
+    "geometry_tables.hpp": "fa965c9f0a766c000cd6567c62063d52089286bcb2f46a71823f1e6b33821d57",
+    "battle.cpp": "9a6a39838b33ae4203e06058979071b0847caf33ba667646ca140df4ea3be066",
+    "search.hpp": "72b8d74097df3d744dd94844e2b2de720e21d019b84182847dfaad3364376886",
+    "search.cpp": "d70605b88b84850b32826178522f1537a1ac615eac42598a4b924294b23a9bc3",
+    "evaluator.hpp": "d221b118a8daa4e3fe56960d2ded35fda53630be55faa093a42f402313f0c1ba",
+    "evaluator.cpp": "bdad466574b93e074315c6b8e2fd4939ac45a0139b45fb3d0cd93b7a4ede40f3",
+    "protocol.hpp": "2c3d8694f2d3fb1c68f0c196a85bcf0613bfa79052608316594c1f174585740a",
+    "protocol.cpp": "7cd2f3e7f6bc9c6711d0f739564f25edd4ce9a4e424f24f1aece1edc6bb850b2",
+    "main.cpp": "df1a6b8416f9431e782c8811c4558927b42426c0705fb7fa14b01b03fbcd9177"
+  },
+  "reports": [
+    "tests/rules/battle_parity.json",
+    "tests/geometry/official_geometry_report.json",
+    "tests/search_results.json",
+    "tests/evaluator_results.json",
+    "tests/gameplay_report.json"
+  ]
+}

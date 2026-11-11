@@ -1,0 +1,22 @@
+{
+  "suite": "evaluator_tests",
+  "passed": true,
+  "checks": 2864552,
+  "transition_edges": 11469,
+  "ordinary_edges": 10206,
+  "clear_edges": 189,
+  "perfect_clear_edges": 4,
+  "garbage_edges": 1081,
+  "clear_and_garbage_edges": 7,
+  "hold_edges": 5311,
+  "dead_edges": 0,
+  "selected_transitions": 256,
+  "segments": 4,
+  "max_segment_length": 64,
+  "accumulator_components": 6239136,
+  "refresh_events_max_acc_abs": 1.90734863281e-05,
+  "row_seams_max_acc_abs": 3.0517578125e-05,
+  "refresh_events_max_value_abs": 1.52587890625e-05,
+  "row_seams_max_value_abs": 3.33786010742e-05,
+  "tolerance": {"acc_abs": 0.0001, "acc_rel": 0.00003, "value_abs": 0.001, "value_rel": 0.00001}
+}

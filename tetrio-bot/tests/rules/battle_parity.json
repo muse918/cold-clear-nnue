@@ -1,0 +1,17 @@
+{
+  "client_sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+  "engine": 19,
+  "fixture_seed": 9182026,
+  "deterministic_cases": 4080,
+  "random_battle_cases": 12000,
+  "enqueue_cases": 512,
+  "total_cases": 16592,
+  "passed": 16592,
+  "mismatches": 0,
+  "outgoing_packet_comparisons": 12040,
+  "tank_row_comparisons": 12493,
+  "cancelled_line_comparisons": 47003,
+  "scope": "Official AnnounceLines, AnnounceClear, FightLines, TakeAllDamage, AddPendingGarbage; all output packets, counters, incoming order and RNG state.",
+  "limitations": "Placement generation, transport acknowledgement reconciliation, frame/input timing, and live gameplay are separate tests.",
+  "mismatch": []
+}
