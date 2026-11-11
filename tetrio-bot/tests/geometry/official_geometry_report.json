@@ -1,0 +1,240 @@
+{
+  "client": "TETR.IO Beta 1.7.8 / engine 19",
+  "sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+  "extractedUtf16": {
+    "board": 830092,
+    "spin": 948653,
+    "computeKick": 866159,
+    "considerBlockout": 872646
+  },
+  "coordinates": "10x40, bottom-first matrix anchor; rotations/spins use representative .96 falling-y phase",
+  "seed": "0x918178",
+  "checks": {
+    "cells": 28,
+    "collision": 3592,
+    "rotate": 5822,
+    "spin": 18200,
+    "spawn": 560,
+    "placements": 84,
+    "official_paths_replayed": 2245
+  },
+  "primitive_and_set_cases": 28286,
+  "mismatches": 0,
+  "rotationCoverage": [
+    [
+      {
+        "zero": 85,
+        "kick": [
+          122,
+          29,
+          22,
+          20,
+          0
+        ],
+        "blocked": 169
+      },
+      {
+        "zero": 372,
+        "kick": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "blocked": 75
+      },
+      {
+        "zero": 252,
+        "kick": [
+          36,
+          11,
+          13,
+          9,
+          4
+        ],
+        "blocked": 123
+      },
+      {
+        "zero": 164,
+        "kick": [
+          57,
+          35,
+          14,
+          17,
+          1
+        ],
+        "blocked": 159
+      },
+      {
+        "zero": 170,
+        "kick": [
+          62,
+          30,
+          27,
+          13,
+          4
+        ],
+        "blocked": 138
+      },
+      {
+        "zero": 143,
+        "kick": [
+          131,
+          18,
+          7,
+          4,
+          0
+        ],
+        "blocked": 141
+      },
+      {
+        "zero": 133,
+        "kick": [
+          121,
+          20,
+          14,
+          6,
+          0
+        ],
+        "blocked": 150
+      }
+    ],
+    [
+      {
+        "zero": 59,
+        "kick": [
+          34,
+          23,
+          16,
+          20,
+          0
+        ],
+        "blocked": 235
+      },
+      {
+        "zero": 348,
+        "kick": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "blocked": 39
+      },
+      {
+        "zero": 228,
+        "kick": [
+          35,
+          11,
+          11,
+          9,
+          4
+        ],
+        "blocked": 90
+      },
+      {
+        "zero": 140,
+        "kick": [
+          56,
+          35,
+          12,
+          17,
+          1
+        ],
+        "blocked": 126
+      },
+      {
+        "zero": 146,
+        "kick": [
+          61,
+          30,
+          25,
+          13,
+          4
+        ],
+        "blocked": 105
+      },
+      {
+        "zero": 119,
+        "kick": [
+          130,
+          18,
+          5,
+          4,
+          0
+        ],
+        "blocked": 108
+      },
+      {
+        "zero": 109,
+        "kick": [
+          120,
+          20,
+          12,
+          6,
+          0
+        ],
+        "blocked": 117
+      }
+    ]
+  ],
+  "spinCoverage": [
+    [
+      1820,
+      0,
+      0
+    ],
+    [
+      1766,
+      14,
+      40
+    ],
+    [
+      1722,
+      58,
+      40
+    ],
+    [
+      1426,
+      14,
+      380
+    ],
+    [
+      1382,
+      58,
+      380
+    ],
+    [
+      1426,
+      354,
+      40
+    ],
+    [
+      1382,
+      398,
+      40
+    ],
+    [
+      1382,
+      438,
+      0
+    ],
+    [
+      1600,
+      14,
+      206
+    ],
+    [
+      750,
+      0,
+      1070
+    ]
+  ],
+  "limitations": [
+    "No frame gravity, key timing, lock-reset or movement-limit simulation.",
+    "Canonical noninteger falling-y phase is conservative at the topmost buffer row; exact-integer frame phases can differ.",
+    "Spawn-to-lock geometric reachability is checked; this does not prove a timing-feasible input script."
+  ]
+}

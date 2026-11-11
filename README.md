@@ -2,6 +2,23 @@
 
 Modern Tetris Versus bot.
 
+## TETR.IO environment and NNUE search
+
+The new [tetrio-bot](tetrio-bot/README.md) module is a standalone C++17
+placement-level TETR.IO environment and deterministic beam/DAG searcher. It
+supports the pinned Tetra League rules, configurable all-spin modes, battle
+garbage state, a JSONL interface, and the existing native spatial NNUE kernels.
+See its [protocol](tetrio-bot/PROTOCOL.md), [Triangle integration contract](tetrio-bot/ADAPTER.md),
+and [source/experiment audit](tetrio-bot/SEARCH.md). Build with
+`make -C tetrio-bot`; no frame controls or gravity simulation is included.
+
+The earlier [spatial NNUE experiments](experiments/spatial-nnue/README.md)
+contain the model format, row-event kernels, training experiments and recorded
+measurements. The supplied surrogate-trained weights remain experimental;
+the new engine defaults to a heuristic evaluation when no model is supplied.
+
+## Original Cold Clear
+
 You can play against it [in your browser](https://minuskelvin.net/cold-clear)
 or [on your desktop](https://github.com/MinusKelvin/cold-clear/releases).
 
