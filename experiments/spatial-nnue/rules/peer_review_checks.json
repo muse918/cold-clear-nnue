@@ -1,0 +1,56 @@
+{
+  "sample_count": 98091,
+  "native_vs_saved_torch": {
+    "cell": {
+      "model": "experiments/spatial-nnue/results/final/seed918/cell.snn",
+      "max_abs": 6.103515625e-05,
+      "mean_abs": 3.855413221500868e-06,
+      "over_tolerance": 0,
+      "model_sha256": "75e7dab438080e295acaf1018fadc04ebc836e5ba466640914c972de7fd69d32"
+    },
+    "cnn": {
+      "model": "experiments/spatial-nnue/results/final/seed918/cnn.snn",
+      "max_abs": 4.57763671875e-05,
+      "mean_abs": 3.7788193905282207e-06,
+      "over_tolerance": 0,
+      "model_sha256": "125dc04f3a2f4a09a03cb6d2dbc769c0814087ac6851d269bde69ed99a01dc1b"
+    },
+    "attention": {
+      "model": "experiments/spatial-nnue/results/seed918/attention.snn",
+      "max_abs": 4.57763671875e-05,
+      "mean_abs": 4.652175003420273e-06,
+      "over_tolerance": 0,
+      "model_sha256": "8d7deabce22fc3b4cee5ebe1ec23f5bdbb221a5ce1cc64e63b5cf16479ee9e6d"
+    }
+  },
+  "split_counts": {
+    "train": {
+      "records": 67514,
+      "games": 66,
+      "clean_records": 33762,
+      "garbage_condition_records": 33752
+    },
+    "validation": {
+      "records": 10168,
+      "games": 10,
+      "clean_records": 5141,
+      "garbage_condition_records": 5027
+    },
+    "test": {
+      "records": 20409,
+      "games": 20,
+      "clean_records": 10181,
+      "garbage_condition_records": 10228
+    }
+  },
+  "parent_group_count": 4408,
+  "mixed_group_folds": 0,
+  "next_piece_alignment_errors": [],
+  "source_sha256": {
+    "train.py": "0aef9adfbf9ddaab08d544702224cc0c0c057c751e78f355c7955deae1588beb",
+    "kernels.cpp": "e41cf9c467e4ccbab38af2049fdbcfa91929bbdab54450042e3cdff50cdd8e21",
+    "generate.cpp": "256b9167c81f5313d43c663d210ab4d1784bb458298460257668eba3eacb927f"
+  },
+  "native_library_sha256": "69682382703b4f7baf6713fbfc6a6583daec8da1021adc692ca7425b7e6aacc2",
+  "scope": "Read-only source review plus all-record export parity and next-piece/split checks. Attention uses pilot weights for arithmetic layout validation only; its pilot accuracy is excluded from final conclusions."
+}

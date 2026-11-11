@@ -1,0 +1,15 @@
+{
+"format":"spatial-first-layer-quant-v1",
+"accepted":true,"model_kind":2,"weight_bits":16,"accumulator_bits":32,
+"scope":"first-layer-only per-channel symmetric quantization; float32 activation/head and output scaling unchanged; no saturation",
+"rounding":"nearest with halfway away from zero; symmetric range excludes most-negative integer",
+"bounds_proof":"position bias plus each of400 weights min(0,w)/max(0,w); local37-empty-token baseline plus37*min/max residual. Bounds also cover remove-before-add subsets; replacement arithmetic uses int32.",
+"bounds":{"global_min":-1427973,"global_max":1367803,"fits_i16":false,"fits_i32":true,"position_min":[-884836,-267821,-1151757,-263584,-991296,-254198,-228347,-629300,-266574,-1163392,-1019276,-1102324,-995844,-242180,-1165527,-198353,-212367,-254040,-1147649,-194849,-274466,-274213,-219551,-971043,-420456,-214412,-239065,-1427973,-1069860,-1059143,-1044892,-1117299],"position_max":[573070,1333896,760063,1146126,697925,1157388,1242780,333342,1107845,696560,694487,641109,431470,1086326,536466,1206277,1142388,1038145,677882,1024033,1367803,998385,1022295,950663,996079,1228984,1126373,644592,328909,374956,408542,553770],"local_min":[-1210603,-7257,-7761,-8742,-1208999,-13977,-1214087,-7723,33239,-5075,-3790,-3232,-4718,-1211925,-9761,-9056,-1214295,17624],"local_max":[6771,1209636,1205654,1205043,5156,1201473,2954,1208097,1256829,1208229,1210254,1211330,1208142,2637,1208871,1209872,896,1232704],"attention_denominator_lower_bound":29.0155497584},
+"memory":{"first_layer_weights_bytes":173056,"bias_bytes":200,"scale_bytes":200,"first_layer_total_bytes":173456,"unchanged_float_head_bytes":21636,"total_parameter_payload_bytes":195092,"active_accumulator_bytes":704,"allocated_accumulator_bytes":1088,"float_first_layer_weights_bytes":346112,"float_model_serialized_bytes":367920,"storage_scope":"parameter payload, not resident process memory; validation harness retains the float master model"},
+"records":29346,"parent_groups":1314,
+"bit_exact_parity":{"refresh_events":{"failed_components":0,"failed_scores":0},"row_seams":{"failed_components":0,"failed_scores":0}},
+"chained_selected_parity":{"transitions":1314,"segments":16,"discontinuities":0,"max_segment_length":88,"refresh_events":{"failed_components":0,"failed_scores":0},"row_seams":{"failed_components":0,"failed_scores":0}},
+"float_comparison":{"score_mae":0.00341774142122,"score_rmse":0.00396487163819,"score_p95_abs":0.0076904296875,"score_max_abs":0.0124053955078,"rank_groups":1265,"top1_identical_fraction":1,"top1_float_regret_le_1e_4_fraction":1,"mean_float_choice_regret":0,"max_float_choice_regret":0,"non_tied_float_pairs":385040,"inverted_pair_fraction":2.07770621234e-05,"quantized_tie_fraction":0},
+"timing_scope":"cached parent to child including accumulator copy, dirty extraction, dequantization and unchanged float head; parent build excluded",
+"timings":null
+}

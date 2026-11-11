@@ -1,0 +1,7 @@
+{
+  "smoke_generator_bytes_unchanged": true,
+  "ctypes_exact_matching_parent_groups": 115,
+  "ctypes_geometry_reward_target_clears": "PASS",
+  "invalid_pointer_rejection": "PASS",
+  "scope": "same harddrop surrogate geometry and heuristic teacher; not full TETR.IO"
+}

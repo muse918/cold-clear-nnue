@@ -1,0 +1,11 @@
+{
+  "records": 2400,
+  "categories": {
+    "clear": 600,
+    "clear_and_garbage": 600,
+    "top_boundary_lock": 600,
+    "buffer_garbage": 600
+  },
+  "scope": "Adversarial row/accumulator arithmetic; includes terminal boards and combined clear+garbage; not frequency/strength data.",
+  "seed": 918731
+}

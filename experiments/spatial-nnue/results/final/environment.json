@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-11-11T14:43:00.879748+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_packages": {
+    "torch": "2.15.0+cpu",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "compiler_flags": {
+    "float_evaluator_and_search": "-O3 -DNDEBUG -std=c++17 -march=native",
+    "quantized_evaluator": "-O3 -std=c++17 -march=native",
+    "dataset_generator_and_libmoves": "-O3 -std=c++17"
+  },
+  "cpu": {
+    "model_name": "AMD EPYC 9V74 80-Core Processor",
+    "os_cpu_count": 9,
+    "affinity_cpu_count": 9,
+    "source": "/proc/cpuinfo and sched_getaffinity; lscpu unavailable in sandbox"
+  },
+  "timing_conditions": {
+    "repeats": 9,
+    "agent_cpu_workloads_serialized": true,
+    "cpu_pinned": false,
+    "frequency_locked": false,
+    "cache_mode": "warm repeated sweeps; cold cache not measured",
+    "note": "Shared host; medians are medians of per-repeat averages, not per-node p50/p99."
+  },
+  "base_commit": "31713b0bd20c0bddf9dfa11daacdbd2d67888ae4",
+  "official_tetrio_js_sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+  "triangle_commit": "aa0698ab8b4299b85c5f87e9b54793e1b7d9d380",
+  "datasets": {
+    "train": {
+      "sha256": "7ac56f13fb812998e62aa03c8a365d6978af3bfd6b255e36ba7480cc311f75ad",
+      "bytes": 23541840,
+      "records": 98091
+    },
+    "heldout": {
+      "sha256": "b803c509f30e117af9ba1ec9b68c90066ab40c0eed8cfc8be3b4edc95a6bc5d9",
+      "bytes": 7043040,
+      "records": 29346
+    },
+    "stress": {
+      "sha256": "fab2500f549754e8f475179597b76329b570deb24fcc82e91fa611b2d6d49ae8",
+      "bytes": 576000,
+      "records": 2400
+    }
+  }
+}

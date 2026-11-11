@@ -1,0 +1,108 @@
+{
+  "official": {
+    "path": "/workspace/scratch/ab33a174506f/upload/tetrio.js",
+    "sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+    "version": "1.7.8",
+    "clientCommit": "e84ebccd2",
+    "engineVersion": 19,
+    "factoryStartCharacter": 830092,
+    "factoryEndCharacter": 842485
+  },
+  "triangle": {
+    "commit": "aa0698ab8b4299b85c5f87e9b54793e1b7d9d380",
+    "file": "src/engine/board/index.ts"
+  },
+  "scope": "Exact isolated row primitives, arbitrary board states; no complete game, movement, replay, timing, or attack equivalence claim.",
+  "clearCases": 1000,
+  "clearMatches": 1000,
+  "clearOrderAndSurvivorIdentityMatches": 1000,
+  "garbageCases": 1000,
+  "garbageMismatches": 751,
+  "firstGarbageMismatch": {
+    "amount": 8,
+    "column": 4,
+    "differingRows": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ]
+  },
+  "fixedGarbageMatches": 1000,
+  "minimalGarbageCases": [
+    {
+      "name": "low_marker_one_row",
+      "oldMarkerRow": 0,
+      "amount": 1,
+      "officialMarkerRows": [
+        1
+      ],
+      "triangleMarkerRows": [
+        1
+      ],
+      "matches": true
+    },
+    {
+      "name": "low_marker_eight_rows",
+      "oldMarkerRow": 0,
+      "amount": 8,
+      "officialMarkerRows": [
+        8
+      ],
+      "triangleMarkerRows": [
+        8
+      ],
+      "matches": true
+    },
+    {
+      "name": "visible_ceiling_eight_rows",
+      "oldMarkerRow": 19,
+      "amount": 8,
+      "officialMarkerRows": [
+        27
+      ],
+      "triangleMarkerRows": [
+        27
+      ],
+      "matches": true
+    },
+    {
+      "name": "first_lost_row_at_cap8",
+      "oldMarkerRow": 23,
+      "amount": 8,
+      "officialMarkerRows": [
+        31
+      ],
+      "triangleMarkerRows": [],
+      "matches": false
+    },
+    {
+      "name": "first_lost_row_at_cap1",
+      "oldMarkerRow": 37,
+      "amount": 1,
+      "officialMarkerRows": [
+        38
+      ],
+      "triangleMarkerRows": [],
+      "matches": false
+    },
+    {
+      "name": "top_buffer_boundary",
+      "oldMarkerRow": 39,
+      "amount": 1,
+      "officialMarkerRows": [],
+      "triangleMarkerRows": [
+        39
+      ],
+      "matches": false
+    }
+  ],
+  "lowStackGarbageCases": 168,
+  "lowStackGarbageMatches": 168,
+  "fixedGarbageChange": "local experimental replacement only: splice(fullHeight - amount - 1, amount) -> splice(fullHeight, amount)"
+}

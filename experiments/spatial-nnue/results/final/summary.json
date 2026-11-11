@@ -1,0 +1,2136 @@
+{
+  "quality_scope": "Hard-drop surrogate teacher and capped solo games; not TETR.IO versus strength.",
+  "seeds": [
+    918,
+    919,
+    920
+  ],
+  "heldout_records": 29346,
+  "models": {
+    "cell": {
+      "ranking": {
+        "rmse": {
+          "mean": 23.824955494046527,
+          "min": 21.338060260889876,
+          "max": 26.968503526897294,
+          "values": [
+            26.968503526897294,
+            23.168302694352416,
+            21.338060260889876
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "mean_teacher_regret": {
+          "mean": 5.995407119130271,
+          "min": 5.639288604683555,
+          "max": 6.17928853675782,
+          "values": [
+            6.167644215949439,
+            6.17928853675782,
+            5.639288604683555
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "top_action_agreement": {
+          "mean": 0.5436100131752306,
+          "min": 0.5399209486166008,
+          "max": 0.5509881422924902,
+          "values": [
+            0.5399209486166008,
+            0.5399209486166008,
+            0.5509881422924902
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        }
+      },
+      "rollout": {
+        "mean_pieces": {
+          "mean": 46.06944444444444,
+          "min": 43.625,
+          "max": 49.333333333333336,
+          "values": [
+            45.25,
+            49.333333333333336,
+            43.625
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "mean_lines": {
+          "mean": 7.361111111111111,
+          "min": 6.541666666666667,
+          "max": 8.291666666666666,
+          "values": [
+            7.25,
+            8.291666666666666,
+            6.541666666666667
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "capped_survival_rate": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        }
+      },
+      "native_model_bytes": 222896,
+      "active_float_accumulator_bytes": 512,
+      "allocated_float_accumulator_bytes": 1088,
+      "cached_parent_timings": {
+        "full_refresh": {
+          "all": {
+            "count": 29346,
+            "median_ns": 1066.3995093,
+            "min_ns": 1012.12965992,
+            "max_ns": 1404.16792749,
+            "checksum": -2104275.11636
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 1027.37917787,
+            "min_ns": 1014.00447037,
+            "max_ns": 1068.19093354,
+            "checksum": -2069653.10691
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 949.643478261,
+            "min_ns": 914.806956522,
+            "max_ns": 1232.48695652,
+            "checksum": -27160.7459986
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 902.807228916,
+            "min_ns": 900.277108434,
+            "max_ns": 1177.92771084,
+            "checksum": -3810.13162589
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 781.2,
+            "min_ns": 771.2,
+            "max_ns": 793.2,
+            "checksum": -134.411780834
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1052,
+            "min_ns": 1041,
+            "max_ns": 1071,
+            "checksum": -34.3509597778
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 1118.2244898,
+            "min_ns": 1115.55102041,
+            "max_ns": 2678.93877551,
+            "checksum": -3482.36908436
+          }
+        },
+        "incremental_refresh_events": {
+          "all": {
+            "count": 29346,
+            "median_ns": 618.934198869,
+            "min_ns": 598.641177673,
+            "max_ns": 702.114666394,
+            "checksum": -2104275.11849
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 598.418572975,
+            "min_ns": 587.282471274,
+            "max_ns": 726.362588622,
+            "checksum": -2069653.10904
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 960.16173913,
+            "min_ns": 903.79826087,
+            "max_ns": 1304.71652174,
+            "checksum": -27160.7459986
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 902.56626506,
+            "min_ns": 899.313253012,
+            "max_ns": 1186.97590361,
+            "checksum": -3810.13162589
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 783,
+            "min_ns": 779.2,
+            "max_ns": 785.2,
+            "checksum": -134.411780834
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1062,
+            "min_ns": 1041,
+            "max_ns": 1071,
+            "checksum": -34.3509597778
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 1118.6122449,
+            "min_ns": 1116.16326531,
+            "max_ns": 1440.14285714,
+            "checksum": -3482.36908436
+          }
+        },
+        "incremental_row_seams": {
+          "all": {
+            "count": 29346,
+            "median_ns": 607.654978532,
+            "min_ns": 597.051863968,
+            "max_ns": 627.742554352,
+            "checksum": -2104275.11844
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 607.533754758,
+            "min_ns": 584.659867984,
+            "max_ns": 620.269444347,
+            "checksum": -2069653.10904
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 660.126956522,
+            "min_ns": 633.354782609,
+            "max_ns": 1023.38782609,
+            "checksum": -27160.7459676
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 709.024096386,
+            "min_ns": 705.65060241,
+            "max_ns": 748.590361446,
+            "checksum": -3810.13161349
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 809.2,
+            "min_ns": 799.2,
+            "max_ns": 831.2,
+            "checksum": -134.41179657
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 932,
+            "min_ns": 931,
+            "max_ns": 1072,
+            "checksum": -34.3509521484
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 810.612244898,
+            "min_ns": 808.571428571,
+            "max_ns": 1803.53061224,
+            "checksum": -3482.36907005
+          }
+        }
+      },
+      "sibling_timings": {
+        "full_refresh": {
+          "count": 29346,
+          "median_ns": 1132.25475363,
+          "min_ns": 1026.42237443,
+          "max_ns": 1267.5499557,
+          "checksum": -2104275.11636
+        },
+        "incremental_refresh_events": {
+          "count": 29346,
+          "median_ns": 646.923328563,
+          "min_ns": 633.754140258,
+          "max_ns": 665.364956042,
+          "checksum": -2104275.11849
+        },
+        "incremental_row_seams": {
+          "count": 29346,
+          "median_ns": 638.990356437,
+          "min_ns": 627.70227629,
+          "max_ns": 691.604682069,
+          "checksum": -2104275.11844
+        }
+      },
+      "one_ply_timings": {
+        "full_refresh": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 1132.33747483,
+          "min_ns_per_candidate": 1061.00378878,
+          "max_ns_per_candidate": 1914.39604738,
+          "median_us_per_root": 26.2245778656,
+          "median_candidates_per_second": 883128.945417,
+          "best_q_sum": -63845.1222147,
+          "selection_checksum": "8641904582738435562",
+          "total_ns_samples": [
+            35765340,
+            33174091,
+            34199489,
+            56086061,
+            32902291,
+            35114199,
+            32263506,
+            31395668,
+            31084228
+          ]
+        },
+        "incremental_refresh_events": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 727.648735365,
+          "min_ns_per_candidate": 659.529781206,
+          "max_ns_per_candidate": 912.569307438,
+          "median_us_per_root": 16.8521146245,
+          "median_candidates_per_second": 1374289.47705,
+          "best_q_sum": -63845.1221058,
+          "selection_checksum": "8641904582738435562",
+          "total_ns_samples": [
+            23120656,
+            23267809,
+            20829609,
+            24250592,
+            21317925,
+            26735543,
+            20130499,
+            19798842,
+            19322244
+          ]
+        },
+        "incremental_row_seams": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 715.085503635,
+          "min_ns_per_candidate": 660.244632556,
+          "max_ns_per_candidate": 747.564767724,
+          "median_us_per_root": 16.5611541502,
+          "median_candidates_per_second": 1398434.16615,
+          "best_q_sum": -63845.122111,
+          "selection_checksum": "8641904582738435562",
+          "total_ns_samples": [
+            21606171,
+            21066125,
+            21901405,
+            21092726,
+            20949860,
+            20100167,
+            19506743,
+            19958664,
+            19343187
+          ]
+        }
+      },
+      "quantization": {
+        "8": {
+          "memory": {
+            "first_layer_weights_bytes": 51200,
+            "bias_bytes": 512,
+            "scale_bytes": 512,
+            "first_layer_total_bytes": 52224,
+            "unchanged_float_head_bytes": 17540,
+            "total_parameter_payload_bytes": 69764,
+            "active_accumulator_bytes": 256,
+            "allocated_accumulator_bytes": 576,
+            "float_first_layer_weights_bytes": 204800,
+            "float_model_serialized_bytes": 222896,
+            "storage_scope": "parameter payload, not resident process memory; validation harness retains the float master model"
+          },
+          "timings": {
+            "full_refresh": {
+              "median_ns": 888.600320316,
+              "min_ns": 838.605602126,
+              "max_ns": 1833.83384448,
+              "checksum": -2097761.46105
+            },
+            "incremental_refresh_events": {
+              "median_ns": 695.833333333,
+              "min_ns": 623.121140871,
+              "max_ns": 863.408232809,
+              "checksum": -2097761.46105
+            },
+            "incremental_row_seams": {
+              "median_ns": 642.436788659,
+              "min_ns": 611.111633613,
+              "max_ns": 699.303448511,
+              "checksum": -2097761.46105
+            }
+          },
+          "float_comparison": {
+            "score_mae": 0.268672649944,
+            "score_rmse": 0.346416153291,
+            "score_p95_abs": 0.705078125,
+            "score_max_abs": 1.4677772522,
+            "rank_groups": 1265,
+            "top1_identical_fraction": 0.974703557312,
+            "top1_float_regret_le_1e_4_fraction": 0.974703557312,
+            "mean_float_choice_regret": 0.00444169553372,
+            "max_float_choice_regret": 0.560186386108,
+            "non_tied_float_pairs": 385040,
+            "inverted_pair_fraction": 0.00763557033036,
+            "quantized_tie_fraction": 0
+          }
+        },
+        "16": {
+          "memory": {
+            "first_layer_weights_bytes": 102400,
+            "bias_bytes": 512,
+            "scale_bytes": 512,
+            "first_layer_total_bytes": 103424,
+            "unchanged_float_head_bytes": 17540,
+            "total_parameter_payload_bytes": 120964,
+            "active_accumulator_bytes": 512,
+            "allocated_accumulator_bytes": 1088,
+            "float_first_layer_weights_bytes": 204800,
+            "float_model_serialized_bytes": 222896,
+            "storage_scope": "parameter payload, not resident process memory; validation harness retains the float master model"
+          },
+          "timings": {
+            "full_refresh": {
+              "median_ns": 3899.88557214,
+              "min_ns": 3683.36771621,
+              "max_ns": 4722.38696926,
+              "checksum": -2104271.54906
+            },
+            "incremental_refresh_events": {
+              "median_ns": 902.402882846,
+              "min_ns": 880.623662509,
+              "max_ns": 1033.72296054,
+              "checksum": -2104271.54906
+            },
+            "incremental_row_seams": {
+              "median_ns": 868.441423022,
+              "min_ns": 832.448919785,
+              "max_ns": 2789.44278607,
+              "checksum": -2104271.54906
+            }
+          },
+          "float_comparison": {
+            "score_mae": 0.00137615647246,
+            "score_rmse": 0.00176918921024,
+            "score_p95_abs": 0.00359344482422,
+            "score_max_abs": 0.00784683227539,
+            "rank_groups": 1265,
+            "top1_identical_fraction": 1,
+            "top1_float_regret_le_1e_4_fraction": 1,
+            "mean_float_choice_regret": 0,
+            "max_float_choice_regret": 0,
+            "non_tied_float_pairs": 385040,
+            "inverted_pair_fraction": 5.97340536048e-05,
+            "quantized_tie_fraction": 0
+          }
+        }
+      }
+    },
+    "cnn": {
+      "ranking": {
+        "rmse": {
+          "mean": 21.03934897953665,
+          "min": 19.825204057127948,
+          "max": 22.461769535900316,
+          "values": [
+            19.825204057127948,
+            20.831073345581693,
+            22.461769535900316
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "mean_teacher_regret": {
+          "mean": 5.078880130820594,
+          "min": 4.573865590642092,
+          "max": 5.464181882684881,
+          "values": [
+            5.198592919134811,
+            4.573865590642092,
+            5.464181882684881
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "top_action_agreement": {
+          "mean": 0.5976284584980237,
+          "min": 0.5865612648221344,
+          "max": 0.6181818181818182,
+          "values": [
+            0.5881422924901186,
+            0.6181818181818182,
+            0.5865612648221344
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        }
+      },
+      "rollout": {
+        "mean_pieces": {
+          "mean": 95.63888888888889,
+          "min": 90.125,
+          "max": 99.625,
+          "values": [
+            97.16666666666667,
+            99.625,
+            90.125
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "mean_lines": {
+          "mean": 26.98611111111111,
+          "min": 24.75,
+          "max": 28.791666666666668,
+          "values": [
+            27.416666666666668,
+            28.791666666666668,
+            24.75
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "capped_survival_rate": {
+          "mean": 0.05555555555555555,
+          "min": 0.041666666666666664,
+          "max": 0.08333333333333333,
+          "values": [
+            0.041666666666666664,
+            0.08333333333333333,
+            0.041666666666666664
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        }
+      },
+      "native_model_bytes": 335152,
+      "active_float_accumulator_bytes": 640,
+      "allocated_float_accumulator_bytes": 1088,
+      "cached_parent_timings": {
+        "full_refresh": {
+          "all": {
+            "count": 29346,
+            "median_ns": 1423.87551966,
+            "min_ns": 1390.26214816,
+            "max_ns": 1488.33629796,
+            "checksum": -2075751.29083
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 1412.13219013,
+            "min_ns": 1395.20270317,
+            "max_ns": 1436.49963329,
+            "checksum": -2041530.41546
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 1336.08695652,
+            "min_ns": 1267.30434783,
+            "max_ns": 1541.52695652,
+            "checksum": -26809.3787427
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 1257.80722892,
+            "min_ns": 1246.57831325,
+            "max_ns": 8481.96385542,
+            "checksum": -3778.02413988
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 1177.8,
+            "min_ns": 1161.8,
+            "max_ns": 1213.8,
+            "checksum": -142.085430145
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1382,
+            "min_ns": 1362,
+            "max_ns": 1412,
+            "checksum": -43.5839233398
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 1415.6122449,
+            "min_ns": 1393.73469388,
+            "max_ns": 1970.73469388,
+            "checksum": -3447.80313301
+          }
+        },
+        "incremental_refresh_events": {
+          "all": {
+            "count": 29346,
+            "median_ns": 829.175151639,
+            "min_ns": 800.087098753,
+            "max_ns": 1109.31816943,
+            "checksum": -2075751.28697
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 812.205112982,
+            "min_ns": 799.902804456,
+            "max_ns": 911.439877065,
+            "checksum": -2041530.4116
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 1434.44347826,
+            "min_ns": 1261.57391304,
+            "max_ns": 2303.51304348,
+            "checksum": -26809.3787427
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 1246.46987952,
+            "min_ns": 1245.25301205,
+            "max_ns": 1512.51807229,
+            "checksum": -3778.02413988
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 1165.6,
+            "min_ns": 1161.8,
+            "max_ns": 1169.8,
+            "checksum": -142.085430145
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1372,
+            "min_ns": 1352,
+            "max_ns": 1402,
+            "checksum": -43.5839233398
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 1387.20408163,
+            "min_ns": 1385.75510204,
+            "max_ns": 2743.12244898,
+            "checksum": -3447.80313301
+          }
+        },
+        "incremental_row_seams": {
+          "all": {
+            "count": 29346,
+            "median_ns": 823.554010768,
+            "min_ns": 796.236454713,
+            "max_ns": 845.169460915,
+            "checksum": -2075751.28695
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 797.769531659,
+            "min_ns": 787.732686062,
+            "max_ns": 875.477351308,
+            "checksum": -2041530.4116
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 946.019130435,
+            "min_ns": 913.605217391,
+            "max_ns": 1072.61043478,
+            "checksum": -26809.3787093
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 953.855421687,
+            "min_ns": 946.373493976,
+            "max_ns": 1137.38554217,
+            "checksum": -3778.02415705
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 989.4,
+            "min_ns": 973.4,
+            "max_ns": 1017.6,
+            "checksum": -142.085426807
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1152,
+            "min_ns": 1102,
+            "max_ns": 1182,
+            "checksum": -43.5839195251
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 853.326530612,
+            "min_ns": 842.102040816,
+            "max_ns": 6037.89795918,
+            "checksum": -3447.80314064
+          }
+        }
+      },
+      "sibling_timings": {
+        "full_refresh": {
+          "count": 29346,
+          "median_ns": 1410.15071901,
+          "min_ns": 1392.37292987,
+          "max_ns": 1494.44997615,
+          "checksum": -2075751.29083
+        },
+        "incremental_refresh_events": {
+          "count": 29346,
+          "median_ns": 890.306447216,
+          "min_ns": 871.727322293,
+          "max_ns": 910.048285967,
+          "checksum": -2075751.28697
+        },
+        "incremental_row_seams": {
+          "count": 29346,
+          "median_ns": 877.163872419,
+          "min_ns": 843.062086826,
+          "max_ns": 917.080692428,
+          "checksum": -2075751.28695
+        }
+      },
+      "one_ply_timings": {
+        "full_refresh": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 1644.51005222,
+          "min_ns_per_candidate": 1544.13154931,
+          "max_ns_per_candidate": 1865.37652319,
+          "median_us_per_root": 38.0863328063,
+          "median_candidates_per_second": 608083.847616,
+          "best_q_sum": -62215.4096277,
+          "selection_checksum": "16089593623098631704",
+          "total_ns_samples": [
+            47986840,
+            47912889,
+            54649936,
+            47762120,
+            45238422,
+            50666055,
+            50930930,
+            49151008,
+            48179211
+          ]
+        },
+        "incremental_refresh_events": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 1031.93542001,
+          "min_ns_per_candidate": 969.654162542,
+          "max_ns_per_candidate": 1221.36839949,
+          "median_us_per_root": 23.8992980237,
+          "median_candidates_per_second": 969052.88898,
+          "best_q_sum": -62215.4096134,
+          "selection_checksum": "16089593623098631704",
+          "total_ns_samples": [
+            35782430,
+            29433967,
+            31533036,
+            31647207,
+            28424794,
+            28407958,
+            29708702,
+            30232612,
+            34315595
+          ]
+        },
+        "incremental_row_seams": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 1023.3588422,
+          "min_ns_per_candidate": 961.84227054,
+          "max_ns_per_candidate": 2000.40768679,
+          "median_us_per_root": 23.7006671937,
+          "median_candidates_per_second": 977174.338815,
+          "best_q_sum": -62215.4095676,
+          "selection_checksum": "16089593623098631704",
+          "total_ns_samples": [
+            29981344,
+            30711154,
+            29709052,
+            37296094,
+            28399144,
+            28179093,
+            29413456,
+            58605944,
+            33994691
+          ]
+        }
+      },
+      "quantization": {
+        "8": {
+          "memory": {
+            "first_layer_weights_bytes": 78336,
+            "bias_bytes": 192,
+            "scale_bytes": 192,
+            "first_layer_total_bytes": 78720,
+            "unchanged_float_head_bytes": 21636,
+            "total_parameter_payload_bytes": 100356,
+            "active_accumulator_bytes": 320,
+            "allocated_accumulator_bytes": 576,
+            "float_first_layer_weights_bytes": 313344,
+            "float_model_serialized_bytes": 335152,
+            "storage_scope": "parameter payload, not resident process memory; validation harness retains the float master model"
+          },
+          "timings": {
+            "full_refresh": {
+              "median_ns": 1898.74882437,
+              "min_ns": 1854.86366115,
+              "max_ns": 1959.20193553,
+              "checksum": -2083730.0973
+            },
+            "incremental_refresh_events": {
+              "median_ns": 1047.85589177,
+              "min_ns": 1000.04092551,
+              "max_ns": 1087.27203026,
+              "checksum": -2083730.0973
+            },
+            "incremental_row_seams": {
+              "median_ns": 1040.80682205,
+              "min_ns": 1011.24197506,
+              "max_ns": 1181.1198119,
+              "checksum": -2083730.0973
+            }
+          },
+          "float_comparison": {
+            "score_mae": 0.314774351293,
+            "score_rmse": 0.391794287697,
+            "score_p95_abs": 0.771457672119,
+            "score_max_abs": 1.48196411133,
+            "rank_groups": 1265,
+            "top1_identical_fraction": 0.981818181818,
+            "top1_float_regret_le_1e_4_fraction": 0.981818181818,
+            "mean_float_choice_regret": 0.0036110798832,
+            "max_float_choice_regret": 0.529281616211,
+            "non_tied_float_pairs": 385040,
+            "inverted_pair_fraction": 0.00641751506337,
+            "quantized_tie_fraction": 2.59713276543e-06
+          }
+        },
+        "16": {
+          "memory": {
+            "first_layer_weights_bytes": 156672,
+            "bias_bytes": 192,
+            "scale_bytes": 192,
+            "first_layer_total_bytes": 157056,
+            "unchanged_float_head_bytes": 21636,
+            "total_parameter_payload_bytes": 178692,
+            "active_accumulator_bytes": 640,
+            "allocated_accumulator_bytes": 1088,
+            "float_first_layer_weights_bytes": 313344,
+            "float_model_serialized_bytes": 335152,
+            "storage_scope": "parameter payload, not resident process memory; validation harness retains the float master model"
+          },
+          "timings": {
+            "full_refresh": {
+              "median_ns": 2488.59268725,
+              "min_ns": 2449.78201458,
+              "max_ns": 3235.85875417,
+              "checksum": -2075799.46181
+            },
+            "incremental_refresh_events": {
+              "median_ns": 1131.57800041,
+              "min_ns": 1071.74217951,
+              "max_ns": 1254.43460778,
+              "checksum": -2075799.46181
+            },
+            "incremental_row_seams": {
+              "median_ns": 1078.13606624,
+              "min_ns": 1056.22197233,
+              "max_ns": 1250.35854972,
+              "checksum": -2075799.46181
+            }
+          },
+          "float_comparison": {
+            "score_mae": 0.00170623103282,
+            "score_rmse": 0.00204853453287,
+            "score_p95_abs": 0.00357055664062,
+            "score_max_abs": 0.00609588623047,
+            "rank_groups": 1265,
+            "top1_identical_fraction": 1,
+            "top1_float_regret_le_1e_4_fraction": 1,
+            "mean_float_choice_regret": 0,
+            "max_float_choice_regret": 0,
+            "non_tied_float_pairs": 385040,
+            "inverted_pair_fraction": 1.8179929358e-05,
+            "quantized_tie_fraction": 0
+          }
+        }
+      }
+    },
+    "attention": {
+      "ranking": {
+        "rmse": {
+          "mean": 20.323874706199504,
+          "min": 19.94554585862223,
+          "max": 20.599456490398364,
+          "values": [
+            20.426621769577917,
+            20.599456490398364,
+            19.94554585862223
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "mean_teacher_regret": {
+          "mean": 5.25673517734794,
+          "min": 5.163897204116399,
+          "max": 5.3797628489407625,
+          "values": [
+            5.226545478986657,
+            5.163897204116399,
+            5.3797628489407625
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "top_action_agreement": {
+          "mean": 0.6068511198945982,
+          "min": 0.5928853754940712,
+          "max": 0.6181818181818182,
+          "values": [
+            0.6094861660079052,
+            0.6181818181818182,
+            0.5928853754940712
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        }
+      },
+      "rollout": {
+        "mean_pieces": {
+          "mean": 121.38888888888889,
+          "min": 109.875,
+          "max": 135.91666666666666,
+          "values": [
+            109.875,
+            135.91666666666666,
+            118.375
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "mean_lines": {
+          "mean": 39.888888888888886,
+          "min": 34.625,
+          "max": 47.625,
+          "values": [
+            34.625,
+            47.625,
+            37.416666666666664
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        },
+        "capped_survival_rate": {
+          "mean": 0.2916666666666667,
+          "min": 0.125,
+          "max": 0.4583333333333333,
+          "values": [
+            0.2916666666666667,
+            0.4583333333333333,
+            0.125
+          ],
+          "interpretation": "Training-seed range, not a confidence interval."
+        }
+      },
+      "native_model_bytes": 367920,
+      "active_float_accumulator_bytes": 704,
+      "allocated_float_accumulator_bytes": 1088,
+      "cached_parent_timings": {
+        "full_refresh": {
+          "all": {
+            "count": 29346,
+            "median_ns": 1672.52968037,
+            "min_ns": 1566.52378518,
+            "max_ns": 1935.77029237,
+            "checksum": -2030504.41189
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 1596.11039709,
+            "min_ns": 1559.11427374,
+            "max_ns": 1712.86382845,
+            "checksum": -1996871.1908
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 1519.00695652,
+            "min_ns": 1416.50434783,
+            "max_ns": 4977.88521739,
+            "checksum": -26347.7699381
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 1407.30120482,
+            "min_ns": 1379.43373494,
+            "max_ns": 9139.71084337,
+            "checksum": -3711.08118784
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 1282,
+            "min_ns": 1267.8,
+            "max_ns": 1294,
+            "checksum": -132.926564574
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1552,
+            "min_ns": 1522,
+            "max_ns": 1582,
+            "checksum": -48.8844261169
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 1600.7755102,
+            "min_ns": 1592,
+            "max_ns": 2141.81632653,
+            "checksum": -3392.55898285
+          }
+        },
+        "incremental_refresh_events": {
+          "all": {
+            "count": 29346,
+            "median_ns": 946.896953588,
+            "min_ns": 910.939242145,
+            "max_ns": 1006.86297962,
+            "checksum": -2030504.41017
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 925.821464743,
+            "min_ns": 896.933852548,
+            "max_ns": 1044.35556875,
+            "checksum": -1996871.18907
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 1435.17565217,
+            "min_ns": 1410.80869565,
+            "max_ns": 1623.81043478,
+            "checksum": -26347.7699381
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 1390.04819277,
+            "min_ns": 1380.87951807,
+            "max_ns": 1564.28915663,
+            "checksum": -3711.08118784
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 1279.8,
+            "min_ns": 1273.8,
+            "max_ns": 1288,
+            "checksum": -132.926564574
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1533,
+            "min_ns": 1512,
+            "max_ns": 1572,
+            "checksum": -48.8844261169
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 1592.40816327,
+            "min_ns": 1583.40816327,
+            "max_ns": 3358.12244898,
+            "checksum": -3392.55898285
+          }
+        },
+        "incremental_row_seams": {
+          "all": {
+            "count": 29346,
+            "median_ns": 935.777789137,
+            "min_ns": 904.550194234,
+            "max_ns": 1201.56028079,
+            "checksum": -2030504.41037
+          },
+          "no_clear": {
+            "count": 28633,
+            "median_ns": 931.929486956,
+            "min_ns": 907.41661719,
+            "max_ns": 1092.18813956,
+            "checksum": -1996871.18907
+          },
+          "clear_1": {
+            "count": 575,
+            "median_ns": 1122.93043478,
+            "min_ns": 1060.08695652,
+            "max_ns": 1494.13217391,
+            "checksum": -26347.7700112
+          },
+          "clear_2": {
+            "count": 83,
+            "median_ns": 1115.42168675,
+            "min_ns": 1098.89156627,
+            "max_ns": 1757.95180723,
+            "checksum": -3711.08128679
+          },
+          "clear_3": {
+            "count": 5,
+            "median_ns": 1149.6,
+            "min_ns": 1143.8,
+            "max_ns": 1169.8,
+            "checksum": -132.926565528
+          },
+          "clear_4": {
+            "count": 1,
+            "median_ns": 1372,
+            "min_ns": 1362,
+            "max_ns": 1422,
+            "checksum": -48.8844337463
+          },
+          "garbage": {
+            "count": 49,
+            "median_ns": 950.408163265,
+            "min_ns": 948.367346939,
+            "max_ns": 1633.28571429,
+            "checksum": -3392.55900574
+          }
+        }
+      },
+      "sibling_timings": {
+        "full_refresh": {
+          "count": 29346,
+          "median_ns": 1642.78324133,
+          "min_ns": 1598.00184011,
+          "max_ns": 1868.313058,
+          "checksum": -2030504.41189
+        },
+        "incremental_refresh_events": {
+          "count": 29346,
+          "median_ns": 999.746132352,
+          "min_ns": 976.112315137,
+          "max_ns": 1030.38093778,
+          "checksum": -2030504.41017
+        },
+        "incremental_row_seams": {
+          "count": 29346,
+          "median_ns": 994.771859879,
+          "min_ns": 948.162236761,
+          "max_ns": 1215.70643359,
+          "checksum": -2030504.41037
+        }
+      },
+      "one_ply_timings": {
+        "full_refresh": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 1633.48817285,
+          "min_ns_per_candidate": 1565.20923644,
+          "max_ns_per_candidate": 1721.92320033,
+          "median_us_per_root": 37.8310695652,
+          "median_candidates_per_second": 612186.862826,
+          "best_q_sum": -60853.0148747,
+          "selection_checksum": "15842887148865384095",
+          "total_ns_samples": [
+            48516099,
+            50447184,
+            48347144,
+            48019519,
+            46250960,
+            45855935,
+            47009695,
+            47089956,
+            47856303
+          ]
+        },
+        "incremental_refresh_events": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 1007.6946445,
+          "min_ns_per_candidate": 976.73830085,
+          "max_ns_per_candidate": 1497.30730109,
+          "median_us_per_root": 23.3378893281,
+          "median_candidates_per_second": 992364.110949,
+          "best_q_sum": -60853.0147398,
+          "selection_checksum": "15842887148865384095",
+          "total_ns_samples": [
+            31008624,
+            29327907,
+            30124801,
+            28615502,
+            29202427,
+            30767800,
+            29522430,
+            29346615,
+            43866612
+          ]
+        },
+        "incremental_row_seams": {
+          "repeats": 9,
+          "generated_candidates_per_repeat": 29297,
+          "median_ns_per_candidate": 1019.12161655,
+          "min_ns_per_candidate": 969.792299553,
+          "max_ns_per_candidate": 1234.74147524,
+          "median_us_per_root": 23.6025343874,
+          "median_candidates_per_second": 981237.159297,
+          "best_q_sum": -60853.0149191,
+          "selection_checksum": "15842887148865384095",
+          "total_ns_samples": [
+            30027773,
+            31408758,
+            36174221,
+            29693689,
+            29184060,
+            29857206,
+            29465575,
+            28412005,
+            30184410
+          ]
+        }
+      },
+      "quantization": {
+        "8": {
+          "memory": {
+            "first_layer_weights_bytes": 86528,
+            "bias_bytes": 200,
+            "scale_bytes": 200,
+            "first_layer_total_bytes": 86928,
+            "unchanged_float_head_bytes": 21636,
+            "total_parameter_payload_bytes": 108564,
+            "active_accumulator_bytes": 352,
+            "allocated_accumulator_bytes": 576,
+            "float_first_layer_weights_bytes": 346112,
+            "float_model_serialized_bytes": 367920,
+            "storage_scope": "parameter payload, not resident process memory; validation harness retains the float master model"
+          },
+          "timings": {
+            "full_refresh": {
+              "median_ns": 2082.25219791,
+              "min_ns": 1980.17988823,
+              "max_ns": 2284.90772167,
+              "checksum": -2020329.13149
+            },
+            "incremental_refresh_events": {
+              "median_ns": 1127.2666803,
+              "min_ns": 1089.7731207,
+              "max_ns": 1236.18292101,
+              "checksum": -2020329.13149
+            },
+            "incremental_row_seams": {
+              "median_ns": 1122.07926123,
+              "min_ns": 1038.62877394,
+              "max_ns": 2481.63426021,
+              "checksum": -2020329.13149
+            }
+          },
+          "float_comparison": {
+            "score_mae": 0.355626703674,
+            "score_rmse": 0.411431068213,
+            "score_p95_abs": 0.733192443848,
+            "score_max_abs": 1.49925994873,
+            "rank_groups": 1265,
+            "top1_identical_fraction": 0.98023715415,
+            "top1_float_regret_le_1e_4_fraction": 0.98023715415,
+            "mean_float_choice_regret": 0.00191414346808,
+            "max_float_choice_regret": 0.379548072815,
+            "non_tied_float_pairs": 385040,
+            "inverted_pair_fraction": 0.00520984832745,
+            "quantized_tie_fraction": 0
+          }
+        },
+        "16": {
+          "memory": {
+            "first_layer_weights_bytes": 173056,
+            "bias_bytes": 200,
+            "scale_bytes": 200,
+            "first_layer_total_bytes": 173456,
+            "unchanged_float_head_bytes": 21636,
+            "total_parameter_payload_bytes": 195092,
+            "active_accumulator_bytes": 704,
+            "allocated_accumulator_bytes": 1088,
+            "float_first_layer_weights_bytes": 346112,
+            "float_model_serialized_bytes": 367920,
+            "storage_scope": "parameter payload, not resident process memory; validation harness retains the float master model"
+          },
+          "timings": {
+            "full_refresh": {
+              "median_ns": 2576.31411436,
+              "min_ns": 2445.77693723,
+              "max_ns": 3026.24442854,
+              "checksum": -2030505.36578
+            },
+            "incremental_refresh_events": {
+              "median_ns": 1121.76255708,
+              "min_ns": 1075.07653513,
+              "max_ns": 1276.02702242,
+              "checksum": -2030505.36578
+            },
+            "incremental_row_seams": {
+              "median_ns": 1068.71580454,
+              "min_ns": 1043.86907926,
+              "max_ns": 1274.94005997,
+              "checksum": -2030505.36578
+            }
+          },
+          "float_comparison": {
+            "score_mae": 0.000781620889019,
+            "score_rmse": 0.000987296393607,
+            "score_p95_abs": 0.0019645690918,
+            "score_max_abs": 0.00457382202148,
+            "rank_groups": 1265,
+            "top1_identical_fraction": 1,
+            "top1_float_regret_le_1e_4_fraction": 1,
+            "mean_float_choice_regret": 0,
+            "max_float_choice_regret": 0,
+            "non_tied_float_pairs": 385040,
+            "inverted_pair_fraction": 2.07770621234e-05,
+            "quantized_tie_fraction": 0
+          }
+        }
+      }
+    },
+    "dense_cnn": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 21.89087212322024,
+        "mae": 9.681820252470905,
+        "top_action_agreement": 0.5968379446640316,
+        "mean_teacher_regret": 5.648932766066238,
+        "p95_teacher_regret": 19.7760025024414,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.7903433946211145,
+        "mae": 5.4603723059063105,
+        "top_action_agreement": 0.6046875,
+        "mean_teacher_regret": 2.3548436798155308,
+        "p95_teacher_regret": 15.211499404907226,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 30.118667507548864,
+        "mae": 13.998112584327025,
+        "top_action_agreement": 0.5888,
+        "mean_teacher_regret": 9.022079990386963,
+        "p95_teacher_regret": 23.155999374389644,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 111.58333333333333,
+          "mean_lines": 34.666666666666664,
+          "capped_survival_rate": 0.2916666666666667
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 132.16666666666666,
+          "mean_lines": 39.75,
+          "capped_survival_rate": 0.5
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 91.0,
+          "mean_lines": 29.583333333333332,
+          "capped_survival_rate": 0.08333333333333333
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 53,
+            "reward": 342.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 98,
+            "lines": 32,
+            "reward": 210.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 85,
+            "lines": 19,
+            "reward": 120.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 98,
+            "lines": 32,
+            "reward": 204.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 52,
+            "reward": 360.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 107,
+            "lines": 34,
+            "reward": 222.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 68,
+            "lines": 13,
+            "reward": 90.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 63,
+            "lines": 15,
+            "reward": 96.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 54,
+            "reward": 342.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 14
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 76,
+            "lines": 22,
+            "reward": 144.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 120,
+            "lines": 33,
+            "reward": 204.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 91,
+            "lines": 30,
+            "reward": 210.0,
+            "garbage_received": 10,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 101,
+            "lines": 25,
+            "reward": 174.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 24
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 73,
+            "lines": 18,
+            "reward": 120.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 92,
+            "lines": 24,
+            "reward": 144.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 91,
+            "lines": 30,
+            "reward": 192.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 49,
+            "reward": 318.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 23,
+            "reward": 174.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 50,
+            "reward": 306.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 18
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 78,
+            "lines": 23,
+            "reward": 162.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 50,
+            "reward": 348.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 17
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 160,
+            "lines": 72,
+            "reward": 468.0,
+            "garbage_received": 14,
+            "topout": false,
+            "max_height": 10
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 55,
+            "reward": 384.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 80,
+            "lines": 24,
+            "reward": 168.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "transformer": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 28.343297644075907,
+        "mae": 11.351171685030454,
+        "top_action_agreement": 0.5075098814229249,
+        "mean_teacher_regret": 5.241810479371444,
+        "p95_teacher_regret": 20.849996948242183,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 8.849767087649491,
+        "mae": 6.612385008527314,
+        "top_action_agreement": 0.490625,
+        "mean_teacher_regret": 3.625812517851591,
+        "p95_teacher_regret": 17.994506740570056,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 39.30211157164015,
+        "mae": 16.19642593262526,
+        "top_action_agreement": 0.5248,
+        "mean_teacher_regret": 6.896592391967774,
+        "p95_teacher_regret": 22.856000518798822,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 50.083333333333336,
+          "mean_lines": 8.458333333333334,
+          "capped_survival_rate": 0.0
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 58.583333333333336,
+          "mean_lines": 10.083333333333334,
+          "capped_survival_rate": 0.0
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 41.583333333333336,
+          "mean_lines": 6.833333333333333,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 51,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 18,
+            "lines": 1,
+            "reward": 6.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 47,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 37,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 72,
+            "lines": 14,
+            "reward": 90.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 37,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 60,
+            "lines": 11,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 61,
+            "lines": 14,
+            "reward": 96.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 63,
+            "lines": 11,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 63,
+            "lines": 16,
+            "reward": 102.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 53,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 5,
+            "reward": 30.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 48,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 53,
+            "lines": 10,
+            "reward": 60.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 61,
+            "lines": 10,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 2,
+            "reward": 12.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 49,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 37,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 84,
+            "lines": 20,
+            "reward": 126.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 42,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 66,
+            "lines": 13,
+            "reward": 78.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 58,
+            "lines": 14,
+            "reward": 90.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 49,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 21
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    }
+  },
+  "decision": {
+    "primary_architecture": "CNN-compiled local LUT with fixed-query attention pooling",
+    "arithmetic": "float32",
+    "ordinary_lock": "sparse dirty-patch and positional-cell accumulator update",
+    "default_event_path": "full refresh on clear or garbage",
+    "optional_event_path": "verified row-source seam reuse; no material total speedup established",
+    "checkpoint_policy": "seed918 is the fixed representative, not chosen from heldout/rollout scores",
+    "status": "research evaluator; full battle state, Rust integration and match validation remain"
+  },
+  "teacher_rollout": {
+    "overall": {
+      "games": 24,
+      "mean_pieces": 158.54166666666666,
+      "mean_lines": 67.33333333333333,
+      "capped_survival_rate": 0.9583333333333334
+    },
+    "clean": {
+      "games": 12,
+      "mean_pieces": 160.0,
+      "mean_lines": 62.666666666666664,
+      "capped_survival_rate": 1.0
+    },
+    "garbage": {
+      "games": 12,
+      "mean_pieces": 157.08333333333334,
+      "mean_lines": 72.0,
+      "capped_survival_rate": 0.9166666666666666
+    },
+    "games": [
+      {
+        "game": 0,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 62,
+        "reward": 426.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 1,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 76,
+        "reward": 534.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 2,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 61,
+        "reward": 402.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 3,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 67,
+        "reward": 462.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 14
+      },
+      {
+        "game": 4,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 408.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 5,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 74,
+        "reward": 528.0,
+        "garbage_received": 13,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 6,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 414.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 5
+      },
+      {
+        "game": 7,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 76,
+        "reward": 552.0,
+        "garbage_received": 15,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 8,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 64,
+        "reward": 444.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 5
+      },
+      {
+        "game": 9,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 75,
+        "reward": 540.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 10,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 61,
+        "reward": 396.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 11,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 77,
+        "reward": 540.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 12,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 438.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 13,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 74,
+        "reward": 516.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 8
+      },
+      {
+        "game": 14,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 450.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 15,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 76,
+        "reward": 570.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 16,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 456.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 17,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 77,
+        "reward": 582.0,
+        "garbage_received": 17,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 18,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 414.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 19,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 75,
+        "reward": 540.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 11
+      },
+      {
+        "game": 20,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 438.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 21,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 73,
+        "reward": 528.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 22,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 444.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 23,
+        "condition": "garbage",
+        "pieces": 125,
+        "lines": 44,
+        "reward": 300.0,
+        "garbage_received": 13,
+        "topout": true,
+        "max_height": 21
+      }
+    ],
+    "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+  }
+}
