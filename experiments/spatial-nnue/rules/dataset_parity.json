@@ -1,0 +1,44 @@
+{
+  "dataset": "experiments/spatial-nnue/data/train/records.bin",
+  "datasetSha256": "7ac56f13fb812998e62aa03c8a365d6978af3bfd6b255e36ba7480cc311f75ad",
+  "recordBytes": 240,
+  "totalRecords": 98091,
+  "official": {
+    "sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+    "factoryStartUtf16": 830092,
+    "factoryEndUtf16": 842485
+  },
+  "officialVersion": "1.7.8",
+  "officialEngineVersion": 19,
+  "officialShapeTable": {
+    "startUtf16": 751416,
+    "endUtf16": 754883
+  },
+  "dimensions": {
+    "width": 10,
+    "visibleHeight": 20,
+    "bufferHeight": 20,
+    "totalHeight": 40
+  },
+  "selection": "all records",
+  "selectedRecords": 98091,
+  "validatedRecords": 98091,
+  "failures": [],
+  "locks": 97907,
+  "garbage": 184,
+  "clearHistogram": [
+    95703,
+    1958,
+    213,
+    29,
+    4
+  ],
+  "allRareClearsIncluded": 33,
+  "allGarbageIncluded": 184,
+  "shapeChecks": 97907,
+  "verticalPathChecks": 97907,
+  "groundContactChecks": 97907,
+  "rowMapChecks": 98091,
+  "elapsedSeconds": 8.59928402,
+  "scope": "Exact board occupancy/row-clear/mapping/ordinary-garbage primitives; piece footprints from official shape table; collision-free vertical descent from upper buffer in a fixed orientation. No SRS path from actual spawn, hold, spin, attacks, cancellation, timing, topout, or gameplay-strength validation."
+}

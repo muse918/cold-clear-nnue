@@ -1,0 +1,50 @@
+{
+  "train": {
+    "records": 98091,
+    "games": 96,
+    "sha256": "7ac56f13fb812998e62aa03c8a365d6978af3bfd6b255e36ba7480cc311f75ad",
+    "all_records_schema_ranges_finite_mass_and_selection": "PASS",
+    "event_reconstructions_checked": 2843,
+    "event_reconstructions": "PASS",
+    "clear_candidate_histogram": [
+      95703,
+      1958,
+      213,
+      29,
+      4
+    ],
+    "selected_clear_histogram": [
+      2926,
+      1104,
+      166,
+      24,
+      4
+    ],
+    "value_target_min": -500.0,
+    "value_target_max": 37.400001525878906
+  },
+  "heldout": {
+    "records": 29346,
+    "games": 16,
+    "sha256": "b803c509f30e117af9ba1ec9b68c90066ab40c0eed8cfc8be3b4edc95a6bc5d9",
+    "all_records_schema_ranges_finite_mass_and_selection": "PASS",
+    "event_reconstructions_checked": 848,
+    "event_reconstructions": "PASS",
+    "clear_candidate_histogram": [
+      28633,
+      575,
+      83,
+      5,
+      1
+    ],
+    "selected_clear_histogram": [
+      865,
+      326,
+      68,
+      5,
+      1
+    ],
+    "value_target_min": -620.0,
+    "value_target_max": 23.329999923706055
+  }
+}

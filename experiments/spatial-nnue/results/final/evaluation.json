@@ -1,0 +1,3599 @@
+{
+  "heldout_records": 29346,
+  "heldout_games": [
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+  ],
+  "rollout_games": 24,
+  "rollout_piece_cap": 160,
+  "models": {
+    "cell_seed918": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 26.968503526897294,
+        "mae": 11.580603405237117,
+        "top_action_agreement": 0.5399209486166008,
+        "mean_teacher_regret": 6.167644215949439,
+        "p95_teacher_regret": 21.679988861083974,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 8.687896456591975,
+        "mae": 6.256463410109322,
+        "top_action_agreement": 0.5546875,
+        "mean_teacher_regret": 2.9284218695014714,
+        "p95_teacher_regret": 16.760500955581666,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 37.333168181093775,
+        "mae": 17.02436225897357,
+        "top_action_agreement": 0.5248,
+        "mean_teacher_regret": 9.484607898712158,
+        "p95_teacher_regret": 25.888000488281218,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "native_parity": {
+        "max_abs": 0.00018310546875,
+        "mean_abs": 5.332385626388714e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 45.25,
+          "mean_lines": 7.25,
+          "capped_survival_rate": 0.0
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 46.583333333333336,
+          "mean_lines": 6.75,
+          "capped_survival_rate": 0.0
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 43.916666666666664,
+          "mean_lines": 7.75,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 49,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 46,
+            "lines": 10,
+            "reward": 60.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 43,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 39,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 24
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 53,
+            "lines": 9,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 40,
+            "lines": 5,
+            "reward": 36.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 54,
+            "lines": 10,
+            "reward": 60.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 33,
+            "lines": 4,
+            "reward": 30.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 55,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 61,
+            "lines": 14,
+            "reward": 102.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 57,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 51,
+            "lines": 11,
+            "reward": 66.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 34,
+            "lines": 1,
+            "reward": 6.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 34,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 30,
+            "lines": 1,
+            "reward": 6.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 41,
+            "lines": 7,
+            "reward": 48.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 50,
+            "lines": 9,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 48,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 43,
+            "lines": 5,
+            "reward": 30.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 24
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 45,
+            "lines": 9,
+            "reward": 66.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 19
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 44,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 46,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 47,
+            "lines": 8,
+            "reward": 54.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 43,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 22
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "cnn_seed918": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 19.825204057127948,
+        "mae": 9.123419621130004,
+        "top_action_agreement": 0.5881422924901186,
+        "mean_teacher_regret": 5.198592919134811,
+        "p95_teacher_regret": 18.379998779296866,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.892027507306465,
+        "mae": 5.5965054776990595,
+        "top_action_agreement": 0.5953125,
+        "mean_teacher_regret": 2.284781192988157,
+        "p95_teacher_regret": 14.334497547149637,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 27.041162788212873,
+        "mae": 12.729573875571184,
+        "top_action_agreement": 0.5808,
+        "mean_teacher_regret": 8.182336126708984,
+        "p95_teacher_regret": 22.607998657226528,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "compiled_encoder_parity": {
+        "patterns": 4096,
+        "max_abs": 3.5762786865234375e-07,
+        "reference": "Conv2d(4x3), ReLU, Conv2d(1x1), ReLU; optional fixed-query logits/values"
+      },
+      "native_parity": {
+        "max_abs": 0.0001220703125,
+        "mean_abs": 4.741520569950808e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 97.16666666666667,
+          "mean_lines": 27.416666666666668,
+          "capped_survival_rate": 0.041666666666666664
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 120.08333333333333,
+          "mean_lines": 34.083333333333336,
+          "capped_survival_rate": 0.08333333333333333
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 74.25,
+          "mean_lines": 20.75,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 105,
+            "lines": 28,
+            "reward": 180.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 62,
+            "lines": 15,
+            "reward": 102.0,
+            "garbage_received": 7,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 106,
+            "lines": 28,
+            "reward": 186.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 47,
+            "lines": 9,
+            "reward": 72.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 158,
+            "lines": 48,
+            "reward": 318.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 70,
+            "lines": 16,
+            "reward": 96.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 106,
+            "lines": 28,
+            "reward": 180.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 104,
+            "lines": 35,
+            "reward": 234.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 80,
+            "lines": 19,
+            "reward": 132.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 68,
+            "lines": 18,
+            "reward": 126.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 58,
+            "reward": 354.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 11
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 23,
+            "reward": 162.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 126,
+            "lines": 35,
+            "reward": 228.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 79,
+            "lines": 21,
+            "reward": 132.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 106,
+            "lines": 27,
+            "reward": 180.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 46,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 86,
+            "lines": 20,
+            "reward": 132.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 70,
+            "lines": 20,
+            "reward": 138.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 93,
+            "lines": 22,
+            "reward": 138.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 63,
+            "lines": 15,
+            "reward": 96.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 49,
+            "reward": 330.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 125,
+            "lines": 45,
+            "reward": 294.0,
+            "garbage_received": 12,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 155,
+            "lines": 47,
+            "reward": 318.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 80,
+            "lines": 24,
+            "reward": 144.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "attention_seed918": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 20.426621769577917,
+        "mae": 9.08490198075158,
+        "top_action_agreement": 0.6094861660079052,
+        "mean_teacher_regret": 5.226545478986657,
+        "p95_teacher_regret": 17.631999588012693,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.223779407024224,
+        "mae": 5.215599152173402,
+        "top_action_agreement": 0.6109375,
+        "mean_teacher_regret": 2.2184374198317527,
+        "p95_teacher_regret": 14.00249981880187,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 28.116058607952382,
+        "mae": 13.041137457304703,
+        "top_action_agreement": 0.608,
+        "mean_teacher_regret": 8.30684813156128,
+        "p95_teacher_regret": 21.98600158691406,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "compiled_encoder_parity": {
+        "patterns": 4096,
+        "max_abs": 3.814697265625e-06,
+        "reference": "Conv2d(4x3), ReLU, Conv2d(1x1), ReLU; optional fixed-query logits/values"
+      },
+      "native_parity": {
+        "max_abs": 0.0001220703125,
+        "mean_abs": 5.662735475198133e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 109.875,
+          "mean_lines": 34.625,
+          "capped_survival_rate": 0.2916666666666667
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 132.33333333333334,
+          "mean_lines": 41.333333333333336,
+          "capped_survival_rate": 0.5
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 87.41666666666667,
+          "mean_lines": 27.916666666666668,
+          "capped_survival_rate": 0.08333333333333333
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 66,
+            "lines": 13,
+            "reward": 84.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 74,
+            "lines": 21,
+            "reward": 132.0,
+            "garbage_received": 7,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 60,
+            "reward": 414.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 13
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 105,
+            "lines": 35,
+            "reward": 234.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 49,
+            "reward": 360.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 49,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 61,
+            "reward": 408.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 10
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 92,
+            "lines": 30,
+            "reward": 216.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 128,
+            "lines": 36,
+            "reward": 240.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 22,
+            "reward": 150.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 58,
+            "reward": 402.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 11
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 23,
+            "reward": 144.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 52,
+            "reward": 360.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 17
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 160,
+            "lines": 69,
+            "reward": 450.0,
+            "garbage_received": 14,
+            "topout": false,
+            "max_height": 13
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 133,
+            "lines": 38,
+            "reward": 228.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 88,
+            "lines": 28,
+            "reward": 186.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 59,
+            "lines": 9,
+            "reward": 60.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 79,
+            "lines": 25,
+            "reward": 150.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 50,
+            "reward": 318.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 18
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 100,
+            "lines": 34,
+            "reward": 252.0,
+            "garbage_received": 10,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 82,
+            "lines": 18,
+            "reward": 108.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 72,
+            "lines": 19,
+            "reward": 126.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 52,
+            "reward": 360.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 76,
+            "lines": 21,
+            "reward": 138.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 24
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "dense_cnn_seed918": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 21.89087212322024,
+        "mae": 9.681820252470905,
+        "top_action_agreement": 0.5968379446640316,
+        "mean_teacher_regret": 5.648932766066238,
+        "p95_teacher_regret": 19.7760025024414,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.7903433946211145,
+        "mae": 5.4603723059063105,
+        "top_action_agreement": 0.6046875,
+        "mean_teacher_regret": 2.3548436798155308,
+        "p95_teacher_regret": 15.211499404907226,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 30.118667507548864,
+        "mae": 13.998112584327025,
+        "top_action_agreement": 0.5888,
+        "mean_teacher_regret": 9.022079990386963,
+        "p95_teacher_regret": 23.155999374389644,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 111.58333333333333,
+          "mean_lines": 34.666666666666664,
+          "capped_survival_rate": 0.2916666666666667
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 132.16666666666666,
+          "mean_lines": 39.75,
+          "capped_survival_rate": 0.5
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 91.0,
+          "mean_lines": 29.583333333333332,
+          "capped_survival_rate": 0.08333333333333333
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 53,
+            "reward": 342.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 98,
+            "lines": 32,
+            "reward": 210.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 85,
+            "lines": 19,
+            "reward": 120.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 98,
+            "lines": 32,
+            "reward": 204.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 52,
+            "reward": 360.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 107,
+            "lines": 34,
+            "reward": 222.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 68,
+            "lines": 13,
+            "reward": 90.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 63,
+            "lines": 15,
+            "reward": 96.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 54,
+            "reward": 342.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 14
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 76,
+            "lines": 22,
+            "reward": 144.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 120,
+            "lines": 33,
+            "reward": 204.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 91,
+            "lines": 30,
+            "reward": 210.0,
+            "garbage_received": 10,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 101,
+            "lines": 25,
+            "reward": 174.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 24
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 73,
+            "lines": 18,
+            "reward": 120.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 92,
+            "lines": 24,
+            "reward": 144.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 91,
+            "lines": 30,
+            "reward": 192.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 49,
+            "reward": 318.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 23,
+            "reward": 174.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 50,
+            "reward": 306.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 18
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 78,
+            "lines": 23,
+            "reward": 162.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 50,
+            "reward": 348.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 17
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 160,
+            "lines": 72,
+            "reward": 468.0,
+            "garbage_received": 14,
+            "topout": false,
+            "max_height": 10
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 55,
+            "reward": 384.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 80,
+            "lines": 24,
+            "reward": 168.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "transformer_seed918": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 28.343297644075907,
+        "mae": 11.351171685030454,
+        "top_action_agreement": 0.5075098814229249,
+        "mean_teacher_regret": 5.241810479371444,
+        "p95_teacher_regret": 20.849996948242183,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 8.849767087649491,
+        "mae": 6.612385008527314,
+        "top_action_agreement": 0.490625,
+        "mean_teacher_regret": 3.625812517851591,
+        "p95_teacher_regret": 17.994506740570056,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 39.30211157164015,
+        "mae": 16.19642593262526,
+        "top_action_agreement": 0.5248,
+        "mean_teacher_regret": 6.896592391967774,
+        "p95_teacher_regret": 22.856000518798822,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 50.083333333333336,
+          "mean_lines": 8.458333333333334,
+          "capped_survival_rate": 0.0
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 58.583333333333336,
+          "mean_lines": 10.083333333333334,
+          "capped_survival_rate": 0.0
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 41.583333333333336,
+          "mean_lines": 6.833333333333333,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 51,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 18,
+            "lines": 1,
+            "reward": 6.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 47,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 37,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 72,
+            "lines": 14,
+            "reward": 90.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 37,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 60,
+            "lines": 11,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 61,
+            "lines": 14,
+            "reward": 96.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 63,
+            "lines": 11,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 63,
+            "lines": 16,
+            "reward": 102.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 53,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 5,
+            "reward": 30.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 48,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 53,
+            "lines": 10,
+            "reward": 60.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 61,
+            "lines": 10,
+            "reward": 66.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 2,
+            "reward": 12.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 49,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 37,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 84,
+            "lines": 20,
+            "reward": 126.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 42,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 66,
+            "lines": 13,
+            "reward": 78.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 58,
+            "lines": 14,
+            "reward": 90.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 49,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 21
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "cell_seed919": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 23.168302694352416,
+        "mae": 10.608484826586464,
+        "top_action_agreement": 0.5399209486166008,
+        "mean_teacher_regret": 6.17928853675782,
+        "p95_teacher_regret": 21.631999969482415,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 8.554711494860632,
+        "mae": 6.041166722533451,
+        "top_action_agreement": 0.553125,
+        "mean_teacher_regret": 2.8222030732780694,
+        "p95_teacher_regret": 16.740999841690062,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 31.792655532783094,
+        "mae": 15.278418072053764,
+        "top_action_agreement": 0.5264,
+        "mean_teacher_regret": 9.616944051361084,
+        "p95_teacher_regret": 29.27199058532706,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "native_parity": {
+        "max_abs": 0.00018310546875,
+        "mean_abs": 5.139071618032176e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 49.333333333333336,
+          "mean_lines": 8.291666666666666,
+          "capped_survival_rate": 0.0
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 51.333333333333336,
+          "mean_lines": 7.916666666666667,
+          "capped_survival_rate": 0.0
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 47.333333333333336,
+          "mean_lines": 8.666666666666666,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 42,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 2,
+            "reward": 12.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 50,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 47,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 42,
+            "lines": 6,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 39,
+            "lines": 5,
+            "reward": 36.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 35,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 46,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 40,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 47,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 53,
+            "lines": 8,
+            "reward": 54.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 46,
+            "lines": 8,
+            "reward": 54.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 74,
+            "lines": 16,
+            "reward": 102.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 1,
+            "reward": 6.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 53,
+            "lines": 8,
+            "reward": 54.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 46,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 53,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 1,
+            "reward": 6.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 57,
+            "lines": 11,
+            "reward": 78.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 65,
+            "lines": 18,
+            "reward": 132.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 80,
+            "lines": 17,
+            "reward": 108.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 70,
+            "lines": 19,
+            "reward": 126.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 37,
+            "lines": 5,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 69,
+            "lines": 18,
+            "reward": 120.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "cnn_seed919": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 20.831073345581693,
+        "mae": 8.81223793538535,
+        "top_action_agreement": 0.6181818181818182,
+        "mean_teacher_regret": 4.573865590642092,
+        "p95_teacher_regret": 17.631999588012693,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.381846743231866,
+        "mae": 5.038756296621175,
+        "top_action_agreement": 0.6265625,
+        "mean_teacher_regret": 2.157156215980649,
+        "p95_teacher_regret": 14.268000555038427,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 28.668808741995147,
+        "mae": 12.670499382160353,
+        "top_action_agreement": 0.6096,
+        "mean_teacher_regret": 7.048575990295411,
+        "p95_teacher_regret": 21.78800048828124,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "compiled_encoder_parity": {
+        "patterns": 4096,
+        "max_abs": 2.384185791015625e-07,
+        "reference": "Conv2d(4x3), ReLU, Conv2d(1x1), ReLU; optional fixed-query logits/values"
+      },
+      "native_parity": {
+        "max_abs": 0.0001220703125,
+        "mean_abs": 5.193367087485967e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 99.625,
+          "mean_lines": 28.791666666666668,
+          "capped_survival_rate": 0.08333333333333333
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 116.41666666666667,
+          "mean_lines": 32.333333333333336,
+          "capped_survival_rate": 0.16666666666666666
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 82.83333333333333,
+          "mean_lines": 25.25,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 67,
+            "lines": 13,
+            "reward": 84.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 87,
+            "lines": 27,
+            "reward": 186.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 110,
+            "lines": 29,
+            "reward": 186.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 123,
+            "lines": 45,
+            "reward": 288.0,
+            "garbage_received": 13,
+            "topout": true,
+            "max_height": 24
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 121,
+            "lines": 34,
+            "reward": 210.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 22,
+            "reward": 144.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 105,
+            "lines": 27,
+            "reward": 168.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 61,
+            "lines": 12,
+            "reward": 72.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 154,
+            "lines": 47,
+            "reward": 318.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 24
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 78,
+            "lines": 23,
+            "reward": 144.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 114,
+            "lines": 31,
+            "reward": 210.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 59,
+            "lines": 14,
+            "reward": 90.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 107,
+            "lines": 28,
+            "reward": 174.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 79,
+            "lines": 22,
+            "reward": 144.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 81,
+            "lines": 19,
+            "reward": 120.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 46,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 137,
+            "lines": 40,
+            "reward": 258.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 63,
+            "lines": 18,
+            "reward": 114.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 52,
+            "reward": 348.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 16
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 129,
+            "lines": 48,
+            "reward": 330.0,
+            "garbage_received": 13,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 81,
+            "lines": 18,
+            "reward": 114.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 101,
+            "lines": 33,
+            "reward": 222.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 50,
+            "reward": 324.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 18
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 91,
+            "lines": 30,
+            "reward": 186.0,
+            "garbage_received": 10,
+            "topout": true,
+            "max_height": 22
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "attention_seed919": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 20.599456490398364,
+        "mae": 9.064666871042133,
+        "top_action_agreement": 0.6181818181818182,
+        "mean_teacher_regret": 5.163897204116399,
+        "p95_teacher_regret": 18.259999084472653,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.466003404077777,
+        "mae": 5.482190471545292,
+        "top_action_agreement": 0.6109375,
+        "mean_teacher_regret": 2.2689687058329584,
+        "p95_teacher_regret": 14.327999353408789,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 28.305747847415557,
+        "mae": 12.727631713422227,
+        "top_action_agreement": 0.6256,
+        "mean_teacher_regret": 8.128303986358642,
+        "p95_teacher_regret": 22.995994567871094,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "compiled_encoder_parity": {
+        "patterns": 4096,
+        "max_abs": 1.52587890625e-05,
+        "reference": "Conv2d(4x3), ReLU, Conv2d(1x1), ReLU; optional fixed-query logits/values"
+      },
+      "native_parity": {
+        "max_abs": 9.1552734375e-05,
+        "mean_abs": 4.532341790763894e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 135.91666666666666,
+          "mean_lines": 47.625,
+          "capped_survival_rate": 0.4583333333333333
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 158.58333333333334,
+          "mean_lines": 55.0,
+          "capped_survival_rate": 0.9166666666666666
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 113.25,
+          "mean_lines": 40.25,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 60,
+            "reward": 390.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 152,
+            "lines": 58,
+            "reward": 360.0,
+            "garbage_received": 14,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 58,
+            "reward": 396.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 9
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 95,
+            "lines": 31,
+            "reward": 198.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 55,
+            "reward": 378.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 14
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 122,
+            "lines": 43,
+            "reward": 276.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 57,
+            "reward": 384.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 12
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 92,
+            "lines": 29,
+            "reward": 186.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 58,
+            "reward": 378.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 12
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 96,
+            "lines": 31,
+            "reward": 210.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 55,
+            "reward": 372.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 14
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 126,
+            "lines": 48,
+            "reward": 312.0,
+            "garbage_received": 14,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 143,
+            "lines": 43,
+            "reward": 300.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 125,
+            "lines": 45,
+            "reward": 288.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 60,
+            "reward": 402.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 8
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 62,
+            "lines": 17,
+            "reward": 108.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 53,
+            "reward": 348.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 15
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 73,
+            "lines": 22,
+            "reward": 150.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 57,
+            "reward": 390.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 13
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 158,
+            "lines": 63,
+            "reward": 402.0,
+            "garbage_received": 16,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 50,
+            "reward": 330.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 17
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 106,
+            "lines": 36,
+            "reward": 228.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 54,
+            "reward": 336.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 16
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 152,
+            "lines": 60,
+            "reward": 396.0,
+            "garbage_received": 17,
+            "topout": true,
+            "max_height": 23
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "cell_seed920": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 21.338060260889876,
+        "mae": 10.519686337824712,
+        "top_action_agreement": 0.5509881422924902,
+        "mean_teacher_regret": 5.639288604683555,
+        "p95_teacher_regret": 20.639996337890615,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 8.774217425140264,
+        "mae": 6.319667777850577,
+        "top_action_agreement": 0.559375,
+        "mean_teacher_regret": 2.813046910986304,
+        "p95_teacher_regret": 15.199997234344483,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 29.019625917180864,
+        "mae": 14.814067823405434,
+        "top_action_agreement": 0.5424,
+        "mean_teacher_regret": 8.53336009902954,
+        "p95_teacher_regret": 24.82599639892574,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "native_parity": {
+        "max_abs": 0.00018310546875,
+        "mean_abs": 5.182642780710012e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 43.625,
+          "mean_lines": 6.541666666666667,
+          "capped_survival_rate": 0.0
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 45.166666666666664,
+          "mean_lines": 6.5,
+          "capped_survival_rate": 0.0
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 42.083333333333336,
+          "mean_lines": 6.583333333333333,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 37,
+            "lines": 4,
+            "reward": 30.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 57,
+            "lines": 12,
+            "reward": 78.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 34,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 41,
+            "lines": 5,
+            "reward": 36.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 55,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 45,
+            "lines": 7,
+            "reward": 54.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 34,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 51,
+            "lines": 9,
+            "reward": 54.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 27,
+            "lines": 0,
+            "reward": 0.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 48,
+            "lines": 10,
+            "reward": 66.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 44,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 36,
+            "lines": 6,
+            "reward": 36.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 73,
+            "lines": 16,
+            "reward": 102.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 41,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 2,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 60,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 33,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 44,
+            "lines": 7,
+            "reward": 42.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 39,
+            "lines": 6,
+            "reward": 42.0,
+            "garbage_received": 4,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 69,
+            "lines": 17,
+            "reward": 114.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 31,
+            "lines": 3,
+            "reward": 18.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 40,
+            "lines": 4,
+            "reward": 24.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 39,
+            "lines": 5,
+            "reward": 36.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 25,
+            "lines": 0,
+            "reward": 0.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 44,
+            "lines": 8,
+            "reward": 48.0,
+            "garbage_received": 3,
+            "topout": true,
+            "max_height": 22
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "cnn_seed920": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 22.461769535900316,
+        "mae": 9.129458451339302,
+        "top_action_agreement": 0.5865612648221344,
+        "mean_teacher_regret": 5.464181882684881,
+        "p95_teacher_regret": 20.058000946044917,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.765993027221323,
+        "mae": 5.490778344504818,
+        "top_action_agreement": 0.5921875,
+        "mean_teacher_regret": 2.5287655740976334,
+        "p95_teacher_regret": 15.464500617980898,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 30.963396965063396,
+        "mae": 12.849889744585091,
+        "top_action_agreement": 0.5808,
+        "mean_teacher_regret": 8.470048182678223,
+        "p95_teacher_regret": 23.057999038696288,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "compiled_encoder_parity": {
+        "patterns": 4096,
+        "max_abs": 4.76837158203125e-07,
+        "reference": "Conv2d(4x3), ReLU, Conv2d(1x1), ReLU; optional fixed-query logits/values"
+      },
+      "native_parity": {
+        "max_abs": 0.0001220703125,
+        "mean_abs": 5.753609002567828e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 90.125,
+          "mean_lines": 24.75,
+          "capped_survival_rate": 0.041666666666666664
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 100.08333333333333,
+          "mean_lines": 25.666666666666668,
+          "capped_survival_rate": 0.08333333333333333
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 80.16666666666667,
+          "mean_lines": 23.833333333333332,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 89,
+            "lines": 21,
+            "reward": 126.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 108,
+            "lines": 37,
+            "reward": 240.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 83,
+            "lines": 19,
+            "reward": 126.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 66,
+            "lines": 17,
+            "reward": 102.0,
+            "garbage_received": 7,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 51,
+            "reward": 336.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 16
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 91,
+            "lines": 27,
+            "reward": 168.0,
+            "garbage_received": 7,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 94,
+            "lines": 23,
+            "reward": 144.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 61,
+            "lines": 13,
+            "reward": 78.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 81,
+            "lines": 18,
+            "reward": 108.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 66,
+            "lines": 17,
+            "reward": 102.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 115,
+            "lines": 31,
+            "reward": 198.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 64,
+            "lines": 17,
+            "reward": 108.0,
+            "garbage_received": 7,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 100,
+            "lines": 25,
+            "reward": 162.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 152,
+            "lines": 58,
+            "reward": 378.0,
+            "garbage_received": 14,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 87,
+            "lines": 22,
+            "reward": 156.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 24,
+            "reward": 150.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 76,
+            "lines": 16,
+            "reward": 102.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 67,
+            "lines": 19,
+            "reward": 138.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 122,
+            "lines": 34,
+            "reward": 216.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 69,
+            "lines": 18,
+            "reward": 108.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 95,
+            "lines": 23,
+            "reward": 138.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 53,
+            "lines": 11,
+            "reward": 66.0,
+            "garbage_received": 5,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 99,
+            "lines": 25,
+            "reward": 156.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 88,
+            "lines": 28,
+            "reward": 192.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 23
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    },
+    "attention_seed920": {
+      "ranking": {
+        "samples": 29346,
+        "groups": 1265,
+        "rmse": 19.94554585862223,
+        "mae": 8.98852043921886,
+        "top_action_agreement": 0.5928853754940712,
+        "mean_teacher_regret": 5.3797628489407625,
+        "p95_teacher_regret": 19.655998229980465,
+        "median_teacher_margin": 2.7400007247924805
+      },
+      "ranking_clean": {
+        "samples": 14836,
+        "groups": 640,
+        "rmse": 7.441963511235535,
+        "mae": 5.395783369995636,
+        "top_action_agreement": 0.6015625,
+        "mean_teacher_regret": 2.4210780434310437,
+        "p95_teacher_regret": 16.154999542236315,
+        "median_teacher_margin": 2.3799972534179688
+      },
+      "ranking_garbage": {
+        "samples": 14510,
+        "groups": 625,
+        "rmse": 27.348866752009688,
+        "mae": 12.66197648050044,
+        "top_action_agreement": 0.584,
+        "mean_teacher_regret": 8.409456089782715,
+        "p95_teacher_regret": 22.80599822998043,
+        "median_teacher_margin": 3.2700119018554688
+      },
+      "compiled_encoder_parity": {
+        "patterns": 4096,
+        "max_abs": 2.384185791015625e-06,
+        "reference": "Conv2d(4x3), ReLU, Conv2d(1x1), ReLU; optional fixed-query logits/values"
+      },
+      "native_parity": {
+        "max_abs": 0.0001220703125,
+        "mean_abs": 5.49660217075143e-06
+      },
+      "rollout": {
+        "overall": {
+          "games": 24,
+          "mean_pieces": 118.375,
+          "mean_lines": 37.416666666666664,
+          "capped_survival_rate": 0.125
+        },
+        "clean": {
+          "games": 12,
+          "mean_pieces": 138.83333333333334,
+          "mean_lines": 42.583333333333336,
+          "capped_survival_rate": 0.25
+        },
+        "garbage": {
+          "games": 12,
+          "mean_pieces": 97.91666666666667,
+          "mean_lines": 32.25,
+          "capped_survival_rate": 0.0
+        },
+        "games": [
+          {
+            "game": 0,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 53,
+            "reward": 372.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 17
+          },
+          {
+            "game": 1,
+            "condition": "garbage",
+            "pieces": 107,
+            "lines": 36,
+            "reward": 222.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 2,
+            "condition": "clean",
+            "pieces": 120,
+            "lines": 33,
+            "reward": 210.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 3,
+            "condition": "garbage",
+            "pieces": 85,
+            "lines": 26,
+            "reward": 168.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 4,
+            "condition": "clean",
+            "pieces": 148,
+            "lines": 44,
+            "reward": 288.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 5,
+            "condition": "garbage",
+            "pieces": 83,
+            "lines": 24,
+            "reward": 150.0,
+            "garbage_received": 6,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 6,
+            "condition": "clean",
+            "pieces": 118,
+            "lines": 33,
+            "reward": 222.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 7,
+            "condition": "garbage",
+            "pieces": 80,
+            "lines": 23,
+            "reward": 150.0,
+            "garbage_received": 7,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 8,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 56,
+            "reward": 348.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 16
+          },
+          {
+            "game": 9,
+            "condition": "garbage",
+            "pieces": 138,
+            "lines": 52,
+            "reward": 336.0,
+            "garbage_received": 13,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 10,
+            "condition": "clean",
+            "pieces": 158,
+            "lines": 49,
+            "reward": 318.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 11,
+            "condition": "garbage",
+            "pieces": 118,
+            "lines": 43,
+            "reward": 270.0,
+            "garbage_received": 12,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 12,
+            "condition": "clean",
+            "pieces": 127,
+            "lines": 36,
+            "reward": 234.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 13,
+            "condition": "garbage",
+            "pieces": 106,
+            "lines": 35,
+            "reward": 252.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 14,
+            "condition": "clean",
+            "pieces": 122,
+            "lines": 34,
+            "reward": 222.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 15,
+            "condition": "garbage",
+            "pieces": 80,
+            "lines": 25,
+            "reward": 168.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 16,
+            "condition": "clean",
+            "pieces": 160,
+            "lines": 60,
+            "reward": 384.0,
+            "garbage_received": 0,
+            "topout": false,
+            "max_height": 11
+          },
+          {
+            "game": 17,
+            "condition": "garbage",
+            "pieces": 87,
+            "lines": 27,
+            "reward": 180.0,
+            "garbage_received": 9,
+            "topout": true,
+            "max_height": 24
+          },
+          {
+            "game": 18,
+            "condition": "clean",
+            "pieces": 143,
+            "lines": 42,
+            "reward": 264.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 19,
+            "condition": "garbage",
+            "pieces": 102,
+            "lines": 34,
+            "reward": 204.0,
+            "garbage_received": 10,
+            "topout": true,
+            "max_height": 23
+          },
+          {
+            "game": 20,
+            "condition": "clean",
+            "pieces": 144,
+            "lines": 43,
+            "reward": 300.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 21,
+            "condition": "garbage",
+            "pieces": 112,
+            "lines": 40,
+            "reward": 282.0,
+            "garbage_received": 11,
+            "topout": true,
+            "max_height": 21
+          },
+          {
+            "game": 22,
+            "condition": "clean",
+            "pieces": 106,
+            "lines": 28,
+            "reward": 180.0,
+            "garbage_received": 0,
+            "topout": true,
+            "max_height": 22
+          },
+          {
+            "game": 23,
+            "condition": "garbage",
+            "pieces": 77,
+            "lines": 22,
+            "reward": 132.0,
+            "garbage_received": 8,
+            "topout": true,
+            "max_height": 23
+          }
+        ],
+        "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+      }
+    }
+  },
+  "surrogate_teacher_rollout": {
+    "overall": {
+      "games": 24,
+      "mean_pieces": 158.54166666666666,
+      "mean_lines": 67.33333333333333,
+      "capped_survival_rate": 0.9583333333333334
+    },
+    "clean": {
+      "games": 12,
+      "mean_pieces": 160.0,
+      "mean_lines": 62.666666666666664,
+      "capped_survival_rate": 1.0
+    },
+    "garbage": {
+      "games": 12,
+      "mean_pieces": 157.08333333333334,
+      "mean_lines": 72.0,
+      "capped_survival_rate": 0.9166666666666666
+    },
+    "games": [
+      {
+        "game": 0,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 62,
+        "reward": 426.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 1,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 76,
+        "reward": 534.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 2,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 61,
+        "reward": 402.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 3,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 67,
+        "reward": 462.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 14
+      },
+      {
+        "game": 4,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 408.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 5,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 74,
+        "reward": 528.0,
+        "garbage_received": 13,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 6,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 414.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 5
+      },
+      {
+        "game": 7,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 76,
+        "reward": 552.0,
+        "garbage_received": 15,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 8,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 64,
+        "reward": 444.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 5
+      },
+      {
+        "game": 9,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 75,
+        "reward": 540.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 10,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 61,
+        "reward": 396.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 11,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 77,
+        "reward": 540.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 12,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 438.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 13,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 74,
+        "reward": 516.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 8
+      },
+      {
+        "game": 14,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 450.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 15,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 76,
+        "reward": 570.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 16,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 456.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 17,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 77,
+        "reward": 582.0,
+        "garbage_received": 17,
+        "topout": false,
+        "max_height": 7
+      },
+      {
+        "game": 18,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 414.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 19,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 75,
+        "reward": 540.0,
+        "garbage_received": 16,
+        "topout": false,
+        "max_height": 11
+      },
+      {
+        "game": 20,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 438.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 21,
+        "condition": "garbage",
+        "pieces": 160,
+        "lines": 73,
+        "reward": 528.0,
+        "garbage_received": 14,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 22,
+        "condition": "clean",
+        "pieces": 160,
+        "lines": 63,
+        "reward": 444.0,
+        "garbage_received": 0,
+        "topout": false,
+        "max_height": 6
+      },
+      {
+        "game": 23,
+        "condition": "garbage",
+        "pieces": 125,
+        "lines": 44,
+        "reward": 300.0,
+        "garbage_received": 13,
+        "topout": true,
+        "max_height": 21
+      }
+    ],
+    "scope": "Matched PCG64 piece/garbage seeds; no hold/spin/timing; height>20 terminal; fixed piece cap, not infinite survival."
+  }
+}

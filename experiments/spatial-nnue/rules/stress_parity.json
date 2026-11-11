@@ -1,0 +1,46 @@
+{
+  "dataset": "experiments/spatial-nnue/data/stress/records.bin",
+  "datasetSha256": "fab2500f549754e8f475179597b76329b570deb24fcc82e91fa611b2d6d49ae8",
+  "recordBytes": 240,
+  "totalRecords": 2400,
+  "official": {
+    "sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+    "factoryStartUtf16": 830092,
+    "factoryEndUtf16": 842485
+  },
+  "officialVersion": "1.7.8",
+  "officialEngineVersion": 19,
+  "officialShapeTable": {
+    "startUtf16": 751416,
+    "endUtf16": 754883
+  },
+  "dimensions": {
+    "width": 10,
+    "visibleHeight": 20,
+    "bufferHeight": 20,
+    "totalHeight": 40
+  },
+  "selection": "all records",
+  "selectedRecords": 2400,
+  "validatedRecords": 2400,
+  "failures": [],
+  "locks": 1800,
+  "garbage": 600,
+  "combinedLockGarbage": 600,
+  "garbageRowsInserted": 5399,
+  "clearHistogram": [
+    600,
+    300,
+    300,
+    300,
+    300
+  ],
+  "allRareClearsIncluded": 600,
+  "allGarbageIncluded": 1200,
+  "shapeChecks": 1800,
+  "verticalPathChecks": 1800,
+  "groundContactChecks": 1800,
+  "rowMapChecks": 2400,
+  "elapsedSeconds": 0.257759321,
+  "scope": "Exact board occupancy/row-clear/mapping/ordinary-garbage primitives; piece footprints from official shape table; collision-free vertical descent from upper buffer in a fixed orientation. No SRS path from actual spawn, hold, spin, attacks, cancellation, timing, topout, or gameplay-strength validation."
+}

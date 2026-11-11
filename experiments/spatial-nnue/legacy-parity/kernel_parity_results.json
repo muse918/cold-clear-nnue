@@ -1,0 +1,13 @@
+{
+  "scope": "minimal source-equivalent C++ kernels, deterministic synthetic values",
+  "base_commit": "31713b0bd20c0bddf9dfa11daacdbd2d67888ae4",
+  "avx2_fma": true,
+  "dense_original_max_abs_error": 4,
+  "dense_corrected_max_abs_error": 0,
+  "dot_reference": 11968,
+  "dot_original": 11632,
+  "dot_corrected": 11968,
+  "row_adds_original": 39,
+  "row_adds_corrected": 40,
+  "reproduced_and_corrected": true
+}

@@ -1,0 +1,15 @@
+{
+"format":"spatial-first-layer-quant-v1",
+"accepted":true,"model_kind":1,"weight_bits":16,"accumulator_bits":32,
+"scope":"first-layer-only per-channel symmetric quantization; float32 activation/head and output scaling unchanged; no saturation",
+"rounding":"nearest with halfway away from zero; symmetric range excludes most-negative integer",
+"bounds_proof":"position bias plus each of400 weights min(0,w)/max(0,w); local37-empty-token baseline plus37*min/max residual. Bounds also cover remove-before-add subsets; replacement arithmetic uses int32.",
+"bounds":{"global_min":-3244045,"global_max":2544714,"fits_i16":false,"fits_i32":true,"position_min":[-182176,-1174433,-1079808,-217240,-804636,-3244045,-187935,-1019601,-263089,-737070,-1129236,-689928,-214605,-1219043,-185956,-570858,-446435,-480633,-702771,-1165824,-1194660,-196030,-979255,-1096092,-861864,-861247,-198568,-337655,-586480,-1390666,-283535,-243706],"position_max":[1061781,572477,418026,1097852,668483,2544714,1121554,381476,1176884,368401,675899,524680,1087391,464019,1022326,475631,786193,286589,456411,484236,580165,1205185,350744,458019,577168,546214,1128592,1013266,279398,980771,1195472,988660],"local_min":[-10,0,-16,0,0,10,0,0,-10,0,0,0,0,-13,-7,18],"local_max":[1301872,1212379,1825749,1212379,1212379,2057358,1212379,1212379,1683083,1212379,1212379,1212379,1212379,1763999,1263469,2008304],"attention_denominator_lower_bound":null},
+"memory":{"first_layer_weights_bytes":156672,"bias_bytes":192,"scale_bytes":192,"first_layer_total_bytes":157056,"unchanged_float_head_bytes":21636,"total_parameter_payload_bytes":178692,"active_accumulator_bytes":640,"allocated_accumulator_bytes":1088,"float_first_layer_weights_bytes":313344,"float_model_serialized_bytes":335152,"storage_scope":"parameter payload, not resident process memory; validation harness retains the float master model"},
+"records":29346,"parent_groups":1314,
+"bit_exact_parity":{"refresh_events":{"failed_components":0,"failed_scores":0},"row_seams":{"failed_components":0,"failed_scores":0}},
+"chained_selected_parity":{"transitions":1314,"segments":16,"discontinuities":0,"max_segment_length":88,"refresh_events":{"failed_components":0,"failed_scores":0},"row_seams":{"failed_components":0,"failed_scores":0}},
+"float_comparison":{"score_mae":0.0010583836519,"score_rmse":0.0012909987711,"score_p95_abs":0.0024528503418,"score_max_abs":0.00424957275391,"rank_groups":1265,"top1_identical_fraction":1,"top1_float_regret_le_1e_4_fraction":1,"mean_float_choice_regret":0,"max_float_choice_regret":0,"non_tied_float_pairs":385040,"inverted_pair_fraction":1.03885310617e-05,"quantized_tie_fraction":0},
+"timing_scope":"cached parent to child including accumulator copy, dirty extraction, dequantization and unchanged float head; parent build excluded",
+"timings":null
+}

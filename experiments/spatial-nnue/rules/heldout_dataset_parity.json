@@ -1,0 +1,46 @@
+{
+  "dataset": "experiments/spatial-nnue/data/heldout/records.bin",
+  "datasetSha256": "b803c509f30e117af9ba1ec9b68c90066ab40c0eed8cfc8be3b4edc95a6bc5d9",
+  "recordBytes": 240,
+  "totalRecords": 29346,
+  "official": {
+    "sha256": "6b682a1226dd2ae66ce19a08e944df92e7f175bccaa48cca7269bcd78f39a27a",
+    "factoryStartUtf16": 830092,
+    "factoryEndUtf16": 842485
+  },
+  "officialVersion": "1.7.8",
+  "officialEngineVersion": 19,
+  "officialShapeTable": {
+    "startUtf16": 751416,
+    "endUtf16": 754883
+  },
+  "dimensions": {
+    "width": 10,
+    "visibleHeight": 20,
+    "bufferHeight": 20,
+    "totalHeight": 40
+  },
+  "selection": "all records",
+  "selectedRecords": 29346,
+  "validatedRecords": 29346,
+  "failures": [],
+  "locks": 29297,
+  "garbage": 49,
+  "combinedLockGarbage": 0,
+  "garbageRowsInserted": 107,
+  "clearHistogram": [
+    28633,
+    575,
+    83,
+    5,
+    1
+  ],
+  "allRareClearsIncluded": 6,
+  "allGarbageIncluded": 49,
+  "shapeChecks": 29297,
+  "verticalPathChecks": 29297,
+  "groundContactChecks": 29297,
+  "rowMapChecks": 29346,
+  "elapsedSeconds": 1.9330833389999997,
+  "scope": "Exact board occupancy/row-clear/mapping/ordinary-garbage primitives; piece footprints from official shape table; collision-free vertical descent from upper buffer in a fixed orientation. No SRS path from actual spawn, hold, spin, attacks, cancellation, timing, topout, or gameplay-strength validation."
+}
